@@ -26,16 +26,32 @@ import NPZ
 import JSON
 import Downloads
 import SHA
-import IMAS
+import IMASdd
 using SpecialFunctions: erfc
 
 export SOLPSModel, load_model, predict, load_geometry, scaled_geometry
 export build_edge_profiles_ggd!, add_ggd_field!, ggd_time_slice!
+export build_edge_profiles_ggd_solps2imas!
 
 include("quantile.jl")
 include("geometry.jl")
 include("download.jl")
 include("model.jl")
 include("ggd.jl")
+
+"""
+    build_edge_profiles_ggd_solps2imas!(dd, b2gmtry; R, R_JET, time0)
+
+Build the `dd.edge_profiles.grid_ggd` from a SOLPS `b2fgmtry` file using
+`SOLPS2imas.solps2imas`, so the surrogate's mesh (and its full set of physical
+grid subsets: separatrix, targets, OMP/IMP, core/SOL, …) matches exactly what a
+real SOLPS run loaded via SOLPS2imas produces. Optionally rescales the grid to
+major radius `R` (lengths ∝ R/R_JET). Returns the `grid_index` to reference from
+field entries; write those fields with `add_ggd_field!(...; order=:solps)`.
+
+This is provided by the `SOLPS2imasExt` package extension and requires
+`SOLPS2imas` to be loaded alongside `SOLPSNN`.
+"""
+function build_edge_profiles_ggd_solps2imas! end
 
 end # module SOLPSNN

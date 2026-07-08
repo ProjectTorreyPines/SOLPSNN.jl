@@ -1,9 +1,20 @@
 using Test
 import SOLPSNN
 import NPZ
-import IMAS
+import IMASdd as IMAS
 
 const DATA = joinpath(@__DIR__, "data")
+
+# SOLPS2imas is an optional (weak) dependency exercised via the SOLPS2imasExt
+# package extension. Load it if available so the extension test can run; skip
+# gracefully otherwise (e.g. if the netCDF stack is unavailable).
+const HAVE_SOLPS2IMAS = try
+    @eval import SOLPS2imas
+    true
+catch err
+    @warn "SOLPS2imas not loadable; skipping SOLPS2imasExt test" err
+    false
+end
 
 # Build a SOLPSModel with no ONNX sessions, for testing the pure-Julia
 # pre/post-processing kernels in isolation (no artifacts needed).
@@ -151,6 +162,57 @@ end
         @test e.grid_index == 1 && e.grid_subset_index == 5
         for (ix, iy) in ((1, 1), (2, 4), (nX, nY))
             @test e.values[(ix - 1) * nY + iy] == field[ix, iy]
+        end
+    end
+
+    @testset "SOLPS2imas extension: grid build + :solps ordering" begin
+        b2 = joinpath(@__DIR__, "..", "convert", "geometry_data", "b2fgmtry")
+        if !HAVE_SOLPS2IMAS
+            @test_skip "SOLPS2imas not loadable"
+        elseif !isfile(b2)
+            @warn "b2fgmtry fixture missing; skipping SOLPS2imas extension test" b2
+            @test_skip "b2fgmtry fixture missing"
+        else
+            # the extension supplies the method for the (empty) generic function
+            @test !isempty(methods(SOLPSNN.build_edge_profiles_ggd_solps2imas!))
+            @test Base.get_extension(SOLPSNN, :SOLPS2imasExt) !== nothing
+
+            dd = IMAS.dd()
+            gi = SOLPSNN.build_edge_profiles_ggd_solps2imas!(dd, b2; R=6.2, R_JET=3.0, time0=0.0)
+            g = dd.edge_profiles.grid_ggd[end]
+            sp = g.space[1]
+            cells = sp.objects_per_dimension[3].object
+            nodes = sp.objects_per_dimension[1].object
+            ncell = length(cells)
+            nX = SOLPS2imas.read_b2_output(b2)["dim"]["nx"]
+            nY = ncell ÷ nX
+            @test g.time == 0.0
+            @test ncell == nX * nY
+            @test length(nodes) > ncell            # shared corners, not 4*ncell
+
+            # SOLPS2imas builds the full set of physical subsets (cells=5,
+            # outer/inner target=13/14, separatrix=16) that the native builder lacks
+            subs = Set(s.identifier.index for s in g.grid_subset)
+            for idx in (5, 13, 14, 16)
+                @test idx in subs
+            end
+
+            # R-scaling: node coordinates ∝ s = R/R_JET vs an unscaled build
+            dd0 = IMAS.dd()
+            SOLPSNN.build_edge_profiles_ggd_solps2imas!(dd0, b2)
+            n0 = dd0.edge_profiles.grid_ggd[end].space[1].objects_per_dimension[1].object
+            @test isapprox(nodes[7].geometry, n0[7].geometry .* (6.2 / 3.0); rtol=1e-9)
+
+            # :solps cell ordering ic=(iy-1)*nX+ix  ==>  flatten is vec(field)
+            ep = SOLPSNN.ggd_time_slice!(dd, 0.0)
+            field = reshape(collect(1.0:ncell), nX, nY)
+            e = SOLPSNN.add_ggd_field!(ep.electrons.temperature, field;
+                                       grid_index=gi, subset_index=5, order=:solps)
+            @test e.grid_index == gi && e.grid_subset_index == 5
+            @test e.values == vec(field)
+            for (ix, iy) in ((1, 1), (3, 4), (nX, nY))
+                @test e.values[(iy - 1) * nX + ix] == field[ix, iy]
+            end
         end
     end
 

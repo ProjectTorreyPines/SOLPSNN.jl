@@ -34,7 +34,7 @@ Populate a new `dd.edge_profiles.grid_ggd` slice with the SOLPS B2 grid scaled
 to major radius `R`. Returns the 1-based `grid_index` (position in
 `dd.edge_profiles.grid_ggd`) to be referenced by field entries.
 """
-function build_edge_profiles_ggd!(dd::IMAS.dd, geo::SOLPSGeometry; R::Real,
+function build_edge_profiles_ggd!(dd::IMASdd.dd, geo::SOLPSGeometry; R::Real,
                                   time0::Float64=dd.global_time, grid_name::AbstractString="SOLPS-NN b2")
     sc = scaled_geometry(geo, R)
     crx, cry, vol = sc.crx, sc.cry, sc.vol
@@ -119,20 +119,37 @@ end
 
 Return (creating if needed) the `dd.edge_profiles.ggd` element at `time0`.
 """
-ggd_time_slice!(dd::IMAS.dd, time0::Float64=dd.global_time) = resize!(dd.edge_profiles.ggd, time0)
+ggd_time_slice!(dd::IMASdd.dd, time0::Float64=dd.global_time) = resize!(dd.edge_profiles.ggd, time0)
+
+"""Flatten to SOLPS2imas cell ordering `ic=(iy-1)*nx+ix` (poloidal `ix` fastest)."""
+_flatten_cells_solps(field::AbstractMatrix) = vec(field)
 
 """
-    add_ggd_field!(field_vec, field2D; grid_index, subset_index=CELLS_SUBSET)
+    add_ggd_field!(field_vec, field2D; grid_index, subset_index=CELLS_SUBSET, order=:native)
 
 Attach a 2D `(nx+2, ny+2)` field as a single `generic_grid_scalar` entry on the
 cells subset. `field_vec` is a GGD scalar vector such as
 `ep.electrons.temperature`, `ep.electrons.density`, or `ep.ion[i].density`.
+
+`order` selects the cell flattening, which must match the grid the field is
+attached to:
+- `:native` — SOLPSNN's own [`build_edge_profiles_ggd!`](@ref) grid,
+  `c=(ix-1)*(ny+2)+iy` (radial `iy` fastest).
+- `:solps`  — a grid built by `SOLPS2imas.solps2imas`, `ic=(iy-1)*nx+ix`
+  (poloidal `ix` fastest).
 """
-function add_ggd_field!(field_vec, field2D::AbstractMatrix; grid_index::Integer, subset_index::Integer=CELLS_SUBSET)
+function add_ggd_field!(field_vec, field2D::AbstractMatrix; grid_index::Integer,
+                        subset_index::Integer=CELLS_SUBSET, order::Symbol=:native)
     resize!(field_vec, 1)
     e = field_vec[1]
     e.grid_index = grid_index
     e.grid_subset_index = subset_index
-    e.values = _flatten_cells(field2D)
+    if order === :native
+        e.values = _flatten_cells(field2D)
+    elseif order === :solps
+        e.values = _flatten_cells_solps(field2D)
+    else
+        error("add_ggd_field!: unknown order=$order (use :native or :solps)")
+    end
     return e
 end
