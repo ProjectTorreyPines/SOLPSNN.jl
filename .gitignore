@@ -1,0 +1,10 @@
+# Environment-specific resolved manifest (not committed for a library package)
+/Manifest.toml
+
+# Large model artifacts live outside git (on $PSCRATCH); never commit them.
+solps-nn-data/
+solps-nn-onnx/
+*.onnx
+*.npy
+__pycache__/
+*.pyc

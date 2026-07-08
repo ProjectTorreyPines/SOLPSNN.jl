@@ -1,0 +1,11 @@
+# Python environment for the SOLPS-NN -> ONNX conversion pipeline.
+# Verified working on Perlmutter in the `solpsnn-convert` conda env
+# (python 3.10). TensorFlow only needs to load the upstream SavedModels;
+# CPU build is sufficient for conversion.
+tensorflow-cpu==2.13.1
+tf2onnx==1.16.1
+onnx==1.14.1
+onnxruntime==1.16.3
+scikit-learn>=1.0
+requests
+numpy>=1.24,<1.25

@@ -1,0 +1,2189 @@
+{
+ "root": [
+  {
+   "filename": "./X_mean.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/./X_mean.npy",
+   "hash": "f382b2a9d51de5c0b234850915332a543afee5f0ffa7ee27160f627e4938c460"
+  },
+  {
+   "filename": "./X_std.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/./X_std.npy",
+   "hash": "ed1429d7eaec5464f4b69fe9ca3f269bba0244bb72b0baa30fed53c44677ba72"
+  }
+ ],
+ "na8": [
+  {
+   "filename": "na8/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na8/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "na8/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na8/quantiles.npy",
+   "hash": "4276a13bb558b3e746299da20700c264e797e8aaad06169b1c5e33429651f6bf"
+  },
+  {
+   "filename": "na8/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na8/fold5/saved_model.pb",
+   "hash": "d165af2989ff47adf02af32e7101d0067b10e123cd50e849e2dbb6f1b3d4502c"
+  },
+  {
+   "filename": "na8/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na8/fold5/variables/variables.index",
+   "hash": "3a6064114a00c13b5cd15690b6e2a8c25acdc70bcaa796a472e3422fa1ffb725"
+  },
+  {
+   "filename": "na8/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na8/fold5/variables/variables.data-00000-of-00001",
+   "hash": "42d42ae3073a404d0c7d1b524ed85997709073178c541be9dab1297f67c19672"
+  },
+  {
+   "filename": "na8/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na8/fold3/saved_model.pb",
+   "hash": "36a3f5d229688aa08eb917d1d48d364948c779fce4e9bec3b2ccb50360c9bfe1"
+  },
+  {
+   "filename": "na8/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na8/fold3/variables/variables.index",
+   "hash": "5d9531dd78e994c7c332a78df172234db306731e05da5b4cebd6a2532e4c7ccd"
+  },
+  {
+   "filename": "na8/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na8/fold3/variables/variables.data-00000-of-00001",
+   "hash": "c25200e85ebaf1a957c62857b2cc21070b5183d2091fd9c20d2f3d17f43190e9"
+  },
+  {
+   "filename": "na8/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na8/fold1/saved_model.pb",
+   "hash": "a2d01c0213168dbb980b6f8e3b985a1a1c7a0a97c6a5d1a965fa190d3b931539"
+  },
+  {
+   "filename": "na8/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na8/fold1/variables/variables.index",
+   "hash": "a54cc3d7db29837a83c5ac1836829af8237adde1e7cb0c14f7b36d05e1c77631"
+  },
+  {
+   "filename": "na8/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na8/fold1/variables/variables.data-00000-of-00001",
+   "hash": "9b4673a253a3827b031dc1e56b600fd5cbd7eada6be96cecca3f82be1e45a07f"
+  },
+  {
+   "filename": "na8/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na8/fold4/saved_model.pb",
+   "hash": "437e12c2c2b8cabfc6cb07fef8cb93deb16dfc8f55da4485a254b0b3cd1a6323"
+  },
+  {
+   "filename": "na8/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na8/fold4/variables/variables.index",
+   "hash": "d1af5444b50684462a65a15050712ee8d64059c02ec514d12e6efdeab68f1066"
+  },
+  {
+   "filename": "na8/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na8/fold4/variables/variables.data-00000-of-00001",
+   "hash": "55de4076802600ebbd703ef8996556759a650b5e4c26da6d99e08a03358c5625"
+  },
+  {
+   "filename": "na8/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na8/fold2/saved_model.pb",
+   "hash": "516bf6fe5cdb4ef064e4db25c20c30b14bb68f37f5070adc668b7e4b84aff409"
+  },
+  {
+   "filename": "na8/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na8/fold2/variables/variables.index",
+   "hash": "ac9ea9f54541b3044324d091a522fd618b78ba012173d14eb3605c2fffb4a17e"
+  },
+  {
+   "filename": "na8/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na8/fold2/variables/variables.data-00000-of-00001",
+   "hash": "0f80ed5adf7f15c5cc32f36ee039cdc66da016c9b9c98a80fde66d71ca1854e1"
+  }
+ ],
+ "na4": [
+  {
+   "filename": "na4/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na4/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "na4/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na4/quantiles.npy",
+   "hash": "0aa92232312d6d00499408c53e7280d672368f1cdbdf02ba5dd0b61d880f4df9"
+  },
+  {
+   "filename": "na4/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na4/fold5/saved_model.pb",
+   "hash": "cc212a341660e2961dfccec734301790ebc2c79c3db0fb424085831389ab7566"
+  },
+  {
+   "filename": "na4/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na4/fold5/variables/variables.index",
+   "hash": "d01559cf9eda4bfa5e4717ad9bd0b23a19fb55c772e6e1af0f6a847e0d263a26"
+  },
+  {
+   "filename": "na4/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na4/fold5/variables/variables.data-00000-of-00001",
+   "hash": "e4ecd981b8d6ed2ca9e0a29211df2cb610de0432c9544b79c67f035b225dad5f"
+  },
+  {
+   "filename": "na4/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na4/fold3/saved_model.pb",
+   "hash": "a4395b0db7759f6b72a889a3226150ed0a7f0c99bff843ef8850c6f726389ff4"
+  },
+  {
+   "filename": "na4/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na4/fold3/variables/variables.index",
+   "hash": "664453ad1c9bc59dd51e6cd659e44e2259fd91b59691571596c09c3dccc2f088"
+  },
+  {
+   "filename": "na4/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na4/fold3/variables/variables.data-00000-of-00001",
+   "hash": "148cc22d44d502c5d6dc7fa5fc4d35c4c5b82620e25434c4939c6a4742dfac63"
+  },
+  {
+   "filename": "na4/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na4/fold1/saved_model.pb",
+   "hash": "9b96a220a90cb58965b39ebac14bb80d4c8433f3ff96d0ee3c3475d3d2f98827"
+  },
+  {
+   "filename": "na4/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na4/fold1/variables/variables.index",
+   "hash": "f44e9e462165d65d5906df0eb63b30b687e70a726cb3e6a080ff3b8ded6de32e"
+  },
+  {
+   "filename": "na4/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na4/fold1/variables/variables.data-00000-of-00001",
+   "hash": "775bba642616295d1e63b098b510bc1982dfe8f58ad408132d81f626fe8e0777"
+  },
+  {
+   "filename": "na4/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na4/fold4/saved_model.pb",
+   "hash": "037049dbde4562af4c089a4cc8838382a0c95e37a0068304c6c3384ccab20608"
+  },
+  {
+   "filename": "na4/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na4/fold4/variables/variables.index",
+   "hash": "077dd2c968878e306509d00970dc6d4ecb1437d3b716b492be36accb0692b22f"
+  },
+  {
+   "filename": "na4/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na4/fold4/variables/variables.data-00000-of-00001",
+   "hash": "fab551b470aa3a8733cdb9b9088fd733e4c0ba50dfadf87cfa2983329a06310e"
+  },
+  {
+   "filename": "na4/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na4/fold2/saved_model.pb",
+   "hash": "baca10b5d9861036369a1f3d04c74acbc7f3835035effe50a9a07e465d77b6b5"
+  },
+  {
+   "filename": "na4/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na4/fold2/variables/variables.index",
+   "hash": "689a8b590656dafed61260fe055b7ebe7dbf39e5ddc281150a70062de51709b7"
+  },
+  {
+   "filename": "na4/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na4/fold2/variables/variables.data-00000-of-00001",
+   "hash": "6f791f49f1d466be4cebc4f265a3e36b3b24552611671bfd46de0103a7b0065c"
+  }
+ ],
+ "na0": [
+  {
+   "filename": "na0/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na0/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "na0/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na0/quantiles.npy",
+   "hash": "08e45bb982208a73b66942a2ce3f1ab38d12d4290d386836e14f123dad707804"
+  },
+  {
+   "filename": "na0/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na0/fold5/saved_model.pb",
+   "hash": "2fb3f409946ec9895a2b7c92ca80459ad6049f04af9e5eeb20833b1c261e5020"
+  },
+  {
+   "filename": "na0/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na0/fold5/variables/variables.index",
+   "hash": "c67662cb870c491f5580a45df36a8b66b25aa7b8c5e4d6910ace2f61945b4fc8"
+  },
+  {
+   "filename": "na0/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na0/fold5/variables/variables.data-00000-of-00001",
+   "hash": "7cf90a5ff60dbfa50805681873fda2fd1e513b5e07d01f23daa0d9b2db7715e9"
+  },
+  {
+   "filename": "na0/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na0/fold3/saved_model.pb",
+   "hash": "7d7aa579827d81d73131fe7f9a52acc0a7c23d0d350acf88e5bf800d39b3fe69"
+  },
+  {
+   "filename": "na0/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na0/fold3/variables/variables.index",
+   "hash": "02b937fb4c3206debf11d8761a059a987df15841383652b7fe53a7095a31ea07"
+  },
+  {
+   "filename": "na0/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na0/fold3/variables/variables.data-00000-of-00001",
+   "hash": "2a456b039e94b5b487e9f138e5b0d4966634310b212388cc3f9bdf748b0198ce"
+  },
+  {
+   "filename": "na0/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na0/fold1/saved_model.pb",
+   "hash": "b70b03319621c269e48df58eacf131b9b29e828642aa7341851dbf494a675179"
+  },
+  {
+   "filename": "na0/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na0/fold1/variables/variables.index",
+   "hash": "4d9bbe3712e26de65c1a882c0c719f95dc692f2ff37d6f402d2d02b0f774202d"
+  },
+  {
+   "filename": "na0/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na0/fold1/variables/variables.data-00000-of-00001",
+   "hash": "ba3e5c9e5546fcda7fe45fbc6348c6f96ef7efe0abbe0a4f57d38842c0a85469"
+  },
+  {
+   "filename": "na0/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na0/fold4/saved_model.pb",
+   "hash": "1e19e85d8209a6eff8ccf79f23921aad5b2296fa28d63f5facacc5ef36414bc5"
+  },
+  {
+   "filename": "na0/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na0/fold4/variables/variables.index",
+   "hash": "273e1a111e0ee3c886b813e51d00d8b1970b298f16f4aa611e76f0289f475fcf"
+  },
+  {
+   "filename": "na0/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na0/fold4/variables/variables.data-00000-of-00001",
+   "hash": "6fcabae8142055a4ecd44820e2f08891482a0804a1176277bd5bc47b45a8b471"
+  },
+  {
+   "filename": "na0/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na0/fold2/saved_model.pb",
+   "hash": "4ee4f0fe98bd79e68d358b7ee959765b1ea2133fe1334c8bceecf473019c8e77"
+  },
+  {
+   "filename": "na0/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na0/fold2/variables/variables.index",
+   "hash": "5cb1202a209c3bee220aec1622fa6b510f9b9a44f331d445904a8e1fc0aca3f7"
+  },
+  {
+   "filename": "na0/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na0/fold2/variables/variables.data-00000-of-00001",
+   "hash": "657555fa6d107b2fcc0ac9175c48d0c42a2b6cd371beb62dfffe9497a032d51d"
+  }
+ ],
+ "ua8": [
+  {
+   "filename": "ua8/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua8/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "ua8/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua8/quantiles.npy",
+   "hash": "e6a4d63f43c2fd3292f9f7b09232c34418fe0cc5ae92dfa8bec9df67857c8643"
+  },
+  {
+   "filename": "ua8/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua8/fold5/saved_model.pb",
+   "hash": "377a5a62d9dbc39e63bb5f1c6830123ad9a397915d9b4a5e34793bd696493f51"
+  },
+  {
+   "filename": "ua8/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua8/fold5/variables/variables.index",
+   "hash": "29491bc44a5f914a12fa6ae19b3a5b71bc059ac3c4c09203b75236803aaddefb"
+  },
+  {
+   "filename": "ua8/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua8/fold5/variables/variables.data-00000-of-00001",
+   "hash": "a4280a58b59d31d3001fa68c9a61b0bc83b22a09c32ac1564faaa7198cdd3471"
+  },
+  {
+   "filename": "ua8/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua8/fold3/saved_model.pb",
+   "hash": "56b9f1c2a95867c3e6e31faaefe79f3b039b409f4f29c06776853ee559b2a831"
+  },
+  {
+   "filename": "ua8/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua8/fold3/variables/variables.index",
+   "hash": "100d291ce01478f02c106fffc449ebee3a0abbb50e7fa7a9668815134447ed95"
+  },
+  {
+   "filename": "ua8/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua8/fold3/variables/variables.data-00000-of-00001",
+   "hash": "3a8173546681c46ce62619ec83d053b75ec58dd37006aec210a4cdbae6dc500e"
+  },
+  {
+   "filename": "ua8/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua8/fold1/saved_model.pb",
+   "hash": "7a1813dd6242a8af3b0cdae1b06d93ff4f2f427ec514e8ac774800ba9e08aae0"
+  },
+  {
+   "filename": "ua8/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua8/fold1/variables/variables.index",
+   "hash": "65f5471f6486ad065f2aa66b9f24c619d44c96f60b78f877b4768d7c3eac8bde"
+  },
+  {
+   "filename": "ua8/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua8/fold1/variables/variables.data-00000-of-00001",
+   "hash": "6cc96ab92d2dddf8e967baa0518b4969f3900034a7fc2c76cb6c463f5bdd93ba"
+  },
+  {
+   "filename": "ua8/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua8/fold4/saved_model.pb",
+   "hash": "8a2608f3297c8f630aa12ea3628bdfd45f218a77e0cac09aeed1afab4d37c6e1"
+  },
+  {
+   "filename": "ua8/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua8/fold4/variables/variables.index",
+   "hash": "9fda407e47bcdb41e65377f0c7fcf26d22ddc5eed770a0c72e8c911d82b9dfd1"
+  },
+  {
+   "filename": "ua8/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua8/fold4/variables/variables.data-00000-of-00001",
+   "hash": "f61f7ea06a33a66880f4b4897818c34107a7cd8d9f25ea6199fe4fa336672da7"
+  },
+  {
+   "filename": "ua8/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua8/fold2/saved_model.pb",
+   "hash": "58df016d143c8953bdf1a8e58d99a6036c8b94cc4b68675ece93f795548b36d7"
+  },
+  {
+   "filename": "ua8/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua8/fold2/variables/variables.index",
+   "hash": "59636e149d80674af88c182755e7bbf99725756d5bc434eaf7a12117419fe29a"
+  },
+  {
+   "filename": "ua8/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua8/fold2/variables/variables.data-00000-of-00001",
+   "hash": "e2d17d5c34b158bdd097def3631a32bdf77662efaa373c0597b6c188f69edca5"
+  }
+ ],
+ "ua4": [
+  {
+   "filename": "ua4/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua4/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "ua4/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua4/quantiles.npy",
+   "hash": "f1f37253b6b92588e0ab071c91dccb8585a09bdcbd5296c516ca6d910917665e"
+  },
+  {
+   "filename": "ua4/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua4/fold5/saved_model.pb",
+   "hash": "1680cb55665009a4d83b19fb664ce9a3129ebf59f62890dfad8f6d7cca4ccad6"
+  },
+  {
+   "filename": "ua4/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua4/fold5/variables/variables.index",
+   "hash": "fe176183c1b0316aebd3a530611b991a067bdfbea33f87e9eb037873c0ce1dc2"
+  },
+  {
+   "filename": "ua4/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua4/fold5/variables/variables.data-00000-of-00001",
+   "hash": "8d699cc9ac0c57c0537bd320b0a5ab4b6d0110afb11047550ba3c10e5855c8f6"
+  },
+  {
+   "filename": "ua4/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua4/fold3/saved_model.pb",
+   "hash": "a53bd7e12ba7066592c53fc64e1e1be62e6c6f18ee62bd27105576e303f05757"
+  },
+  {
+   "filename": "ua4/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua4/fold3/variables/variables.index",
+   "hash": "0a6465cb4de830d9d69581b7c53dcc794952461b28315cea36f0485343ae0fa9"
+  },
+  {
+   "filename": "ua4/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua4/fold3/variables/variables.data-00000-of-00001",
+   "hash": "945789322f6a645ee584973eb7267ecefb7bf17d65ab9a87ab1cac13844cedc0"
+  },
+  {
+   "filename": "ua4/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua4/fold1/saved_model.pb",
+   "hash": "cbccaf68a7dae3a10611635a8c95c55884471fc3a5704ee39dada5cec6080d38"
+  },
+  {
+   "filename": "ua4/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua4/fold1/variables/variables.index",
+   "hash": "ecc34b500af49abd6e6cf39b9de826aca2e9c13301abdd6d624aaf2bf8bf6bf6"
+  },
+  {
+   "filename": "ua4/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua4/fold1/variables/variables.data-00000-of-00001",
+   "hash": "1175c8c8acc43ff1352eea508219d2fc660f437432ae6299ac391f5c4b087e2e"
+  },
+  {
+   "filename": "ua4/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua4/fold4/saved_model.pb",
+   "hash": "c4850f871745075ff45f37674f07a17f190fda24a03e98ee000efac51b365ed7"
+  },
+  {
+   "filename": "ua4/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua4/fold4/variables/variables.index",
+   "hash": "2cd10557ac1b7e648b9180de0c5eb19a7a927d077d436257f0083261282081eb"
+  },
+  {
+   "filename": "ua4/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua4/fold4/variables/variables.data-00000-of-00001",
+   "hash": "abd4d403ea31ccd61609cbed89799ebdcf81d2e9292b556c17b202c767b3cd25"
+  },
+  {
+   "filename": "ua4/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua4/fold2/saved_model.pb",
+   "hash": "580fb13ca8be6f2d6e22e7c79506a4b6a1a67b912afb52c78eb6015ba53f9fbf"
+  },
+  {
+   "filename": "ua4/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua4/fold2/variables/variables.index",
+   "hash": "b218ecf0744c29e3c345db2ac734f38a698e74d7e2efe3aea801bdad494e6134"
+  },
+  {
+   "filename": "ua4/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua4/fold2/variables/variables.data-00000-of-00001",
+   "hash": "dc3c5e9d328a935aab2c761610a4cbc81e6b5ddd477fa972a43223f70e1ae4b3"
+  }
+ ],
+ "na9": [
+  {
+   "filename": "na9/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na9/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "na9/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na9/quantiles.npy",
+   "hash": "130e4c9f032e52c0b703e5c283da1fc113ba5b2e51acfbe4be380ffcbb82a99f"
+  },
+  {
+   "filename": "na9/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na9/fold5/saved_model.pb",
+   "hash": "d371e389fd71bebf69781574806ee889e64ba9e20654f796169846acc3fe137c"
+  },
+  {
+   "filename": "na9/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na9/fold5/variables/variables.index",
+   "hash": "4acc0bde0170f6bc6fd97551ca267403a2507957c2f7a54b64668553393bebcf"
+  },
+  {
+   "filename": "na9/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na9/fold5/variables/variables.data-00000-of-00001",
+   "hash": "1f72019277f9e32d110dc0be8173ebbc6a851e9296ed2e579a2dfe449760f6b4"
+  },
+  {
+   "filename": "na9/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na9/fold3/saved_model.pb",
+   "hash": "4a70b9583cf67e9b39725171470201ed71a0b007408830c8ae10b777a7085fb2"
+  },
+  {
+   "filename": "na9/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na9/fold3/variables/variables.index",
+   "hash": "db5e922d7486cfefc5c6b507942a70a722da13f0dfecd531a4a44ecca84a8215"
+  },
+  {
+   "filename": "na9/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na9/fold3/variables/variables.data-00000-of-00001",
+   "hash": "8eee415f36a55613fc388ed3ec6ba1b47693b714e9ebff73cb2e1447a457f2ce"
+  },
+  {
+   "filename": "na9/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na9/fold1/saved_model.pb",
+   "hash": "ed749d49081f3229f822cdd40b4f2495a012b9dcfb0997a178ae4d45f0154691"
+  },
+  {
+   "filename": "na9/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na9/fold1/variables/variables.index",
+   "hash": "c5bb3004af5cbbcdbb94a8b41f0f539cddccc78b940ed516334e8ad0b257a578"
+  },
+  {
+   "filename": "na9/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na9/fold1/variables/variables.data-00000-of-00001",
+   "hash": "0cbc489743dee70d3056527982da0e583b5149d258c6f176c864a2634aea206f"
+  },
+  {
+   "filename": "na9/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na9/fold4/saved_model.pb",
+   "hash": "b697ddf297be4adff981cf96076d34a7dbfa77f69276892efc5c260c037614ed"
+  },
+  {
+   "filename": "na9/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na9/fold4/variables/variables.index",
+   "hash": "5738227afc104d4065634007b764d3134dd59f1e7a42a77a2b037d4de058a12b"
+  },
+  {
+   "filename": "na9/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na9/fold4/variables/variables.data-00000-of-00001",
+   "hash": "4ddada59f61d312ba151a7bfcf1758fe138feadb40ac0f2b035954acf7ef5540"
+  },
+  {
+   "filename": "na9/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na9/fold2/saved_model.pb",
+   "hash": "a98ca227a95148349ae6fca1a19febeca192cb58b177f2e837c92a239b55509e"
+  },
+  {
+   "filename": "na9/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na9/fold2/variables/variables.index",
+   "hash": "d2b43713d8b305933ad89be31a83a88c6df7f834f7e3d9f8b980c6955511a667"
+  },
+  {
+   "filename": "na9/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na9/fold2/variables/variables.data-00000-of-00001",
+   "hash": "c5aa641f8776dc57a9753e5fe8fe451f9ae8ac500deec72ef11c01b8b739055f"
+  }
+ ],
+ "na5": [
+  {
+   "filename": "na5/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na5/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "na5/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na5/quantiles.npy",
+   "hash": "7c850a5d480807dbd63507930aa818b9fa312fd916d7b0534a6c7f9b88d0c300"
+  },
+  {
+   "filename": "na5/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na5/fold5/saved_model.pb",
+   "hash": "2e690a2a010cc4cb2d260ce7f97143586bd924b69ff030dc285c551c5841c406"
+  },
+  {
+   "filename": "na5/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na5/fold5/variables/variables.index",
+   "hash": "071da68299d7111c16210f501338ce5e1f15ef6c4574fc75a88ea005f55d62ff"
+  },
+  {
+   "filename": "na5/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na5/fold5/variables/variables.data-00000-of-00001",
+   "hash": "5b04250ae92c5c7ef58cd36ead5f5f8c66d470be8f14d870c5c4732a5525298a"
+  },
+  {
+   "filename": "na5/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na5/fold3/saved_model.pb",
+   "hash": "c9c905779ff5dd49994d667f1d1e47c8debf56d04968c7900894168a340538f5"
+  },
+  {
+   "filename": "na5/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na5/fold3/variables/variables.index",
+   "hash": "6a79eac31d2b099f81c20b1424e2cae49c3ee749d6b84294bc2245dc277bfb34"
+  },
+  {
+   "filename": "na5/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na5/fold3/variables/variables.data-00000-of-00001",
+   "hash": "eeffe854eea287f2dcbeedadb035508c53fc942731f5d52aefb236184e28e699"
+  },
+  {
+   "filename": "na5/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na5/fold1/saved_model.pb",
+   "hash": "5723a5bbcec2be9096bc0165d0836884c4405fb1d395f644f165fd09be0cf490"
+  },
+  {
+   "filename": "na5/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na5/fold1/variables/variables.index",
+   "hash": "f6cae32be0fdc732a72e601fd8e84a6eb46688c3ea57e06b412bff142e8b2bca"
+  },
+  {
+   "filename": "na5/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na5/fold1/variables/variables.data-00000-of-00001",
+   "hash": "9c83c17dbb22601e10f79b61bc95b0c8622c27987060f097decc936cf014ef9a"
+  },
+  {
+   "filename": "na5/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na5/fold4/saved_model.pb",
+   "hash": "3a90fe78d67130ea8d79b6eeb6342af35d98b0864705be6dc939328bdd493bba"
+  },
+  {
+   "filename": "na5/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na5/fold4/variables/variables.index",
+   "hash": "530ba9bef1bec8fb8c9d376501fff52fe638367ab5f0a484c0cc481bae303aef"
+  },
+  {
+   "filename": "na5/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na5/fold4/variables/variables.data-00000-of-00001",
+   "hash": "226a1aeadbb6ce4a1eb3f09765e1b083a203704bab3a289e7908cf1cb5f2140b"
+  },
+  {
+   "filename": "na5/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na5/fold2/saved_model.pb",
+   "hash": "5aa20ee0b828fa1e719af595b80f040dd6307c9d179f135cdd4894f2eb4c09b1"
+  },
+  {
+   "filename": "na5/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na5/fold2/variables/variables.index",
+   "hash": "3418180ca9934a2e308cd16aa9e23d391f5096b0510da17ba56a0be7fccf90c9"
+  },
+  {
+   "filename": "na5/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na5/fold2/variables/variables.data-00000-of-00001",
+   "hash": "225e11c749767e9b72c98d0e4e6cff925c0ab08ab81e12b1cc429e9d7e89911a"
+  }
+ ],
+ "psol": [
+  {
+   "filename": "psol/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/psol/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "psol/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/psol/quantiles.npy",
+   "hash": "d777e6724601428ca0273a1f7c5255b64905e2e00f9218ad5387cd317483a973"
+  },
+  {
+   "filename": "psol/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/psol/fold5/saved_model.pb",
+   "hash": "bf317781176c1e84b3612e25cec92a712b1d2351a69b3ee1e3386e4b84c544a7"
+  },
+  {
+   "filename": "psol/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/psol/fold5/variables/variables.index",
+   "hash": "f8ef01749ec9ec631732910849e7b5599efa40d58662a92c9721eeec9f04a95f"
+  },
+  {
+   "filename": "psol/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/psol/fold5/variables/variables.data-00000-of-00001",
+   "hash": "5a703abc11b3a5aa53c270ccc9ed0ecd0c3797ac492c38326f6c0fe337a0ac2b"
+  },
+  {
+   "filename": "psol/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/psol/fold3/saved_model.pb",
+   "hash": "d47f8b5cae2811aa1a070ca782f9f8bf1cd2cea58f14fb5ce6e64fee8cabcb2a"
+  },
+  {
+   "filename": "psol/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/psol/fold3/variables/variables.index",
+   "hash": "6b04920a230769d40a422fa0a779b768592bb80b0e4bfb98383435715d0d1175"
+  },
+  {
+   "filename": "psol/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/psol/fold3/variables/variables.data-00000-of-00001",
+   "hash": "0cd6d25acf4cc2d691ed0a8a45107dbb15136f5455ec45474ef4d76627f68c35"
+  },
+  {
+   "filename": "psol/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/psol/fold1/saved_model.pb",
+   "hash": "2897ab295343ab3de181d9273d8e57dcaa47f928d8e24d09c8f9ab8261a4d636"
+  },
+  {
+   "filename": "psol/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/psol/fold1/variables/variables.index",
+   "hash": "3a81e0e2d78518bbb6662172bbd49742c4239943df525ff9502e7fae26df1dc4"
+  },
+  {
+   "filename": "psol/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/psol/fold1/variables/variables.data-00000-of-00001",
+   "hash": "6dbc996054a5aca415954aeead13ddd6ef3112cde0dbc4fcf92a9b08379b20db"
+  },
+  {
+   "filename": "psol/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/psol/fold4/saved_model.pb",
+   "hash": "d63128bd9d4531a451ae286a17e5b505a9e0af743d7d548b85c10d4f837972ed"
+  },
+  {
+   "filename": "psol/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/psol/fold4/variables/variables.index",
+   "hash": "034b0320dbf795c4213ece6fd5847e5673123c1243ce904c16ec5a022c59b088"
+  },
+  {
+   "filename": "psol/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/psol/fold4/variables/variables.data-00000-of-00001",
+   "hash": "ef8772fd256a6bc7ab5bdcdedbfc9b833f5ab84945bfd2267842f4162146497c"
+  },
+  {
+   "filename": "psol/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/psol/fold2/saved_model.pb",
+   "hash": "8946d7c24a35179ee82c2d5190fc07f47a43a2f71bbe3690ae06c3c076e965b1"
+  },
+  {
+   "filename": "psol/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/psol/fold2/variables/variables.index",
+   "hash": "fdbe764cd7d282f58d53f6ddc0756ea2b971366e72dfcd0222a1b54a63551051"
+  },
+  {
+   "filename": "psol/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/psol/fold2/variables/variables.data-00000-of-00001",
+   "hash": "c26fdaebf539aeba0a3ae7d6037deba19134e78a48cd0dac548e081d5c13b92d"
+  }
+ ],
+ "ua9": [
+  {
+   "filename": "ua9/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua9/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "ua9/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua9/quantiles.npy",
+   "hash": "1c9134365eb149ca4cc30fa81c77ae85f5afb7f1b78f1c54fddd61bde0b32656"
+  },
+  {
+   "filename": "ua9/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua9/fold5/saved_model.pb",
+   "hash": "f4ceb9d28bf38c97c12c3abe94e5213bdacee02cb777bcaace2540c68d9a0588"
+  },
+  {
+   "filename": "ua9/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua9/fold5/variables/variables.index",
+   "hash": "979b39aeda6f3e8eeec7efa4dbb8cf5bb8222b352d2d2c7b793d76d455a51556"
+  },
+  {
+   "filename": "ua9/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua9/fold5/variables/variables.data-00000-of-00001",
+   "hash": "be8fbf5b93296394dbaea3e4a08375dac6603d03fe48988446addb273f565a0f"
+  },
+  {
+   "filename": "ua9/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua9/fold3/saved_model.pb",
+   "hash": "4750737ba4dbf1e63aabc1d74ef66a72b9bb1d1f44daa7a6795b1d074211a7a0"
+  },
+  {
+   "filename": "ua9/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua9/fold3/variables/variables.index",
+   "hash": "f3b2357a730b865cb44039b2e1caa67f93da13d08904370684fd7f11658b9385"
+  },
+  {
+   "filename": "ua9/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua9/fold3/variables/variables.data-00000-of-00001",
+   "hash": "fbf5069d15893ab7c0ad972bd1f52624d3d37a5ef451afb6cf7a3c7a9beac1b0"
+  },
+  {
+   "filename": "ua9/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua9/fold1/saved_model.pb",
+   "hash": "0493c152d7e8e8df05b141e856c11585ce4a035ec456916fefc5f00653c4ddc5"
+  },
+  {
+   "filename": "ua9/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua9/fold1/variables/variables.index",
+   "hash": "21d24c9e016af60cc126e2a9342895a316f6c992b7414bbab9286ff0dfeefeec"
+  },
+  {
+   "filename": "ua9/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua9/fold1/variables/variables.data-00000-of-00001",
+   "hash": "7627a29197667c54e478f1e26ad244d5fd08d7f526a9578bc194fe9a91cea8b5"
+  },
+  {
+   "filename": "ua9/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua9/fold4/saved_model.pb",
+   "hash": "d37b92c941c96918bb7e5e6fc89a0d3c46ab0e081702b28fbd8246f9aa2a9cbd"
+  },
+  {
+   "filename": "ua9/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua9/fold4/variables/variables.index",
+   "hash": "3aac4056de8008235e3f458edb9712130244e32b035a0650ff1c430b82347bd6"
+  },
+  {
+   "filename": "ua9/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua9/fold4/variables/variables.data-00000-of-00001",
+   "hash": "fd6b89f1b2f53082d01700cab449d5074c2b2c74c0b3865ad3ca9da3ef866b85"
+  },
+  {
+   "filename": "ua9/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua9/fold2/saved_model.pb",
+   "hash": "d3f26966b3c626234da99dcbbbadf92a68b5714e8ac1bfd006d953760cd687e2"
+  },
+  {
+   "filename": "ua9/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua9/fold2/variables/variables.index",
+   "hash": "3f7585387a01d9c78b0cd2e77fce1ccf7e4cdfd86719b57583c73a32858ba4bb"
+  },
+  {
+   "filename": "ua9/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua9/fold2/variables/variables.data-00000-of-00001",
+   "hash": "77fba102379c65b376d8f8005a31ff2c09f85dfe48b13a5a6bf5dc6fb670b703"
+  }
+ ],
+ "te": [
+  {
+   "filename": "te/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/te/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "te/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/te/quantiles.npy",
+   "hash": "4e77b72fc1ddb4a5bfbb36f86591a735b42d25566bb6a667db47b7dbf0c285f4"
+  },
+  {
+   "filename": "te/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/te/fold5/saved_model.pb",
+   "hash": "5d221dde00e19511133a082b8c96c49bc67389617299443e42e7c250bda0ec4e"
+  },
+  {
+   "filename": "te/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/te/fold5/variables/variables.index",
+   "hash": "b347099a21e3053265ab389714aa2d3e9b3d5166ff05c192f28324ed98230f84"
+  },
+  {
+   "filename": "te/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/te/fold5/variables/variables.data-00000-of-00001",
+   "hash": "c47c6706ed52ae9218dc1182cc15ec03df4fa8055a6c607407f240203381570e"
+  },
+  {
+   "filename": "te/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/te/fold3/saved_model.pb",
+   "hash": "5228800abe6ae94197b15dc23e4f3a9973a858c195ec4b211b2198efbcf2433a"
+  },
+  {
+   "filename": "te/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/te/fold3/variables/variables.index",
+   "hash": "b7b130e35a4f94f7881ad83b62a3952a766a89292d96b7a6b19cd116aad7deda"
+  },
+  {
+   "filename": "te/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/te/fold3/variables/variables.data-00000-of-00001",
+   "hash": "bc3f33e5316d73e8e08b38654f0bb18ac452341f6d1ef53320c3c96c4c5126de"
+  },
+  {
+   "filename": "te/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/te/fold1/saved_model.pb",
+   "hash": "7335ab62570accc11f509fa38df22e13e268dd0f9cc1eb9d2017b6c2c88d5d6e"
+  },
+  {
+   "filename": "te/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/te/fold1/variables/variables.index",
+   "hash": "c5e86432892e214503a4f622bcc0a74fcabf6b00d870e7f6b4c0bb631231b547"
+  },
+  {
+   "filename": "te/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/te/fold1/variables/variables.data-00000-of-00001",
+   "hash": "774d07bf6cc3b4dd41237ae031a4063123ca79126ace176c231575d724d18da5"
+  },
+  {
+   "filename": "te/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/te/fold4/saved_model.pb",
+   "hash": "dd2e80be0961ef8a7db5901dc99dc30d533255fe13de7f01fb4aca9ca0096089"
+  },
+  {
+   "filename": "te/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/te/fold4/variables/variables.index",
+   "hash": "01429db565d74efe8ae1619e0699ca7262888a5c35ebe8553a6b669eb610f2cd"
+  },
+  {
+   "filename": "te/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/te/fold4/variables/variables.data-00000-of-00001",
+   "hash": "5810b84a453ba1e2a66bef38f6d931cf2087c9cfa19d71951c7517347699c566"
+  },
+  {
+   "filename": "te/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/te/fold2/saved_model.pb",
+   "hash": "d19616a2938c6c1234acf6f75c75408d7908ccc6b47a5d329e2ca096da527836"
+  },
+  {
+   "filename": "te/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/te/fold2/variables/variables.index",
+   "hash": "4036bfd68be2fa7c2801e62189517ae62c5551de47ed1f6a9a0bf18a66713f6f"
+  },
+  {
+   "filename": "te/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/te/fold2/variables/variables.data-00000-of-00001",
+   "hash": "96429ec505b1d48a745b599488d0faa222a9de76f223f44ae7e1cd2dcabff25e"
+  }
+ ],
+ "fnixap": [
+  {
+   "filename": "fnixap/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/fnixap/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "fnixap/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/fnixap/quantiles.npy",
+   "hash": "0163dfc24fddaafc0e70c5f4d35d197fafa8c6797e3cc330cf81475903573e16"
+  },
+  {
+   "filename": "fnixap/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/fnixap/fold5/saved_model.pb",
+   "hash": "699452df3e71f3c75299306ed3d03355a88e025599439e8c1835b05a1d709db3"
+  },
+  {
+   "filename": "fnixap/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/fnixap/fold5/variables/variables.index",
+   "hash": "8e5d4ce6a42de8e2208f9b7c829a166f26af4db132a4b88a227f8608b0b92be1"
+  },
+  {
+   "filename": "fnixap/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/fnixap/fold5/variables/variables.data-00000-of-00001",
+   "hash": "6cbe7eda2b9f9f00404c40f18e29ccdcf201a64f8700b9404a8e6e954abbb893"
+  },
+  {
+   "filename": "fnixap/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/fnixap/fold3/saved_model.pb",
+   "hash": "9da2c5bb285a754b7fc0a23678a0248590ccc4c7946f399b962972676a0057fa"
+  },
+  {
+   "filename": "fnixap/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/fnixap/fold3/variables/variables.index",
+   "hash": "20d0809ceb6899ee56c1e14164d17229e04f37cfaabf918736890956b1550848"
+  },
+  {
+   "filename": "fnixap/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/fnixap/fold3/variables/variables.data-00000-of-00001",
+   "hash": "749bf24bb4cf3b4d51696b111b9fa27544a068709c2800d2ecf4597fb0f1ea6c"
+  },
+  {
+   "filename": "fnixap/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/fnixap/fold1/saved_model.pb",
+   "hash": "3143d439e2a41dc4cbf64fde56ef2e86199b2a03e62fe96e3779e05e05ae6e5f"
+  },
+  {
+   "filename": "fnixap/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/fnixap/fold1/variables/variables.index",
+   "hash": "2e2ae500308a22e880bc3023d60ca92eff978b187f2efc9845c22659a4e3293d"
+  },
+  {
+   "filename": "fnixap/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/fnixap/fold1/variables/variables.data-00000-of-00001",
+   "hash": "9cc05da1fe024ebc855e4d93e94f9b423f9e0c4d4fc40c02f7900c956bc7dff6"
+  },
+  {
+   "filename": "fnixap/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/fnixap/fold4/saved_model.pb",
+   "hash": "fb32a3e1790a8df82268b3d1d4dc4d0185a8ecb158337cd112a9c300d7c2b0fa"
+  },
+  {
+   "filename": "fnixap/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/fnixap/fold4/variables/variables.index",
+   "hash": "688d27b5d76036622570c0d7fbd2519ac6e1ac33c9efc691ed61598625fbc8a1"
+  },
+  {
+   "filename": "fnixap/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/fnixap/fold4/variables/variables.data-00000-of-00001",
+   "hash": "b3a97d72dd7055f4152dc1dc28f524bd5cddfdf6bd5ade0ab7669fcb3434c98a"
+  },
+  {
+   "filename": "fnixap/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/fnixap/fold2/saved_model.pb",
+   "hash": "b32da0114c5f3867cfd5cc3d5b1cc942aaa3c428971300c031ae4a52e166192c"
+  },
+  {
+   "filename": "fnixap/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/fnixap/fold2/variables/variables.index",
+   "hash": "b1731ffb56ff70559d2199e5eb01f88e28f32c602b390e172d0a494a68bde2c9"
+  },
+  {
+   "filename": "fnixap/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/fnixap/fold2/variables/variables.data-00000-of-00001",
+   "hash": "552a0cebfdc17d72a7a4920522307aa1787150e5bf27d629634159735d9e9fdd"
+  }
+ ],
+ "na6": [
+  {
+   "filename": "na6/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na6/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "na6/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na6/quantiles.npy",
+   "hash": "b09cd3a7d583ca794a600514fe33e7834864b5bdaf07f6655fb1883ae39cef94"
+  },
+  {
+   "filename": "na6/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na6/fold5/saved_model.pb",
+   "hash": "965b818cba6f976beaa53358b966b6770cbf44618c0101727d2e366031136a9b"
+  },
+  {
+   "filename": "na6/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na6/fold5/variables/variables.index",
+   "hash": "afcbfac1cc12b2d5f0cf675ba09a8c84d8f4bd24a9b0b6bd489c3713c67bff16"
+  },
+  {
+   "filename": "na6/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na6/fold5/variables/variables.data-00000-of-00001",
+   "hash": "0bf182f7a0587286cc635c0ff6f12e4001262c2e0be5e26907bb0ff4de80bcc8"
+  },
+  {
+   "filename": "na6/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na6/fold3/saved_model.pb",
+   "hash": "8e16f6fafc154f3ed0e87d3ecd38ab2935a2fcc82f35d6a4e14bce019af5e59d"
+  },
+  {
+   "filename": "na6/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na6/fold3/variables/variables.index",
+   "hash": "e0c463fc21c4d259c1efce3bc385a77a2c49ff472fc0d86b1ddaaf5ad2195f3b"
+  },
+  {
+   "filename": "na6/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na6/fold3/variables/variables.data-00000-of-00001",
+   "hash": "622be72f9bedc1822e35791449a102cae650594a61f024bd7ebd5dec1a42b1df"
+  },
+  {
+   "filename": "na6/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na6/fold1/saved_model.pb",
+   "hash": "d53eae194c3870bf1c42b591a49afa281c63e15443de604936fdaa3264bf7a37"
+  },
+  {
+   "filename": "na6/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na6/fold1/variables/variables.index",
+   "hash": "3fc29a7032f877347016e969e93a1e7c7a71e5346a5fcb4a90ae64575e99c30c"
+  },
+  {
+   "filename": "na6/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na6/fold1/variables/variables.data-00000-of-00001",
+   "hash": "8760f6c2345edbaf217967037b90e292449b46f7f7175a70ffdb16d59467f234"
+  },
+  {
+   "filename": "na6/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na6/fold4/saved_model.pb",
+   "hash": "7b7e8afc5002ae062b67efb5606c1906d93204133fe403c3e76449a143061d48"
+  },
+  {
+   "filename": "na6/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na6/fold4/variables/variables.index",
+   "hash": "e9c448d0cf14c537e29c4ae1fa243ff2143377df6e2532143d5f869e0d46cadb"
+  },
+  {
+   "filename": "na6/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na6/fold4/variables/variables.data-00000-of-00001",
+   "hash": "a773f885207e6b33b4eac74ecf3f17339cf88c7aae7af4c9f9cdf70e5f447708"
+  },
+  {
+   "filename": "na6/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na6/fold2/saved_model.pb",
+   "hash": "23b9609605b717660a1cd309e32f768c8841e2fdbf8bbc85fef545d48d495403"
+  },
+  {
+   "filename": "na6/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na6/fold2/variables/variables.index",
+   "hash": "f2a7bcd0179e5078d28ec898ceb3f83741534f86ad299e36351d25497fbb7057"
+  },
+  {
+   "filename": "na6/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na6/fold2/variables/variables.data-00000-of-00001",
+   "hash": "ed0c26e7c6887639347e9fbc580c796869af142746bb436f5ca7e046d116d29b"
+  }
+ ],
+ "na7": [
+  {
+   "filename": "na7/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na7/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "na7/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na7/quantiles.npy",
+   "hash": "78921991bd79a0b2c94825a3ccdbf7c9111454c2393e968f1da08a27c1bcf950"
+  },
+  {
+   "filename": "na7/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na7/fold5/saved_model.pb",
+   "hash": "418141c768522ee88cf3de2dbcfa3181bc2ddad34d8080c22e5edda6d7abc237"
+  },
+  {
+   "filename": "na7/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na7/fold5/variables/variables.index",
+   "hash": "87df13bf1503205ffe50ab11562b12ef0c1b62777bf851a3f03d395375a95718"
+  },
+  {
+   "filename": "na7/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na7/fold5/variables/variables.data-00000-of-00001",
+   "hash": "0cfea0381d51c7954e8ea8496bc021544de35067fbe7af5db4a401982b4bea29"
+  },
+  {
+   "filename": "na7/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na7/fold3/saved_model.pb",
+   "hash": "49d67513f66c96cc43645b3d46e9837a77d9933bf16dd0376ea46b38e175eedc"
+  },
+  {
+   "filename": "na7/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na7/fold3/variables/variables.index",
+   "hash": "5b123d778d402e0936b89afc801f9e2e433c66f738e3c777ad40eb718a1889e7"
+  },
+  {
+   "filename": "na7/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na7/fold3/variables/variables.data-00000-of-00001",
+   "hash": "d46c30ac6181aea9a380b7b704c078ecee632ed99c18f8c22af094c8a45059e5"
+  },
+  {
+   "filename": "na7/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na7/fold1/saved_model.pb",
+   "hash": "33176d5f3206530b76d465277428ae895474e7a85f03a1d6b00b846e2c271b5e"
+  },
+  {
+   "filename": "na7/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na7/fold1/variables/variables.index",
+   "hash": "ef0a581f5d25168b893c7884bbdf2087c7b3b8b2dbc463afe9e9063d8db33fe7"
+  },
+  {
+   "filename": "na7/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na7/fold1/variables/variables.data-00000-of-00001",
+   "hash": "d56898b0a137b020521c0d34fab3f4918d1ddf951f389bd0eac31b4d645978f4"
+  },
+  {
+   "filename": "na7/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na7/fold4/saved_model.pb",
+   "hash": "9a130b4d40a00d9ce6d6567c1cafeaee5f0c208245f4ae6847698ec27a9d3467"
+  },
+  {
+   "filename": "na7/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na7/fold4/variables/variables.index",
+   "hash": "9e15973fc4937b106e4e2ad272edb9249766ddbc81fef7fd9afe83cb2a32c40b"
+  },
+  {
+   "filename": "na7/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na7/fold4/variables/variables.data-00000-of-00001",
+   "hash": "c3f37672d8a02022cb4ee3790acae527f4f0218775f0f687ca73c57bb7f517db"
+  },
+  {
+   "filename": "na7/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na7/fold2/saved_model.pb",
+   "hash": "8c583cc96a4ddb80031ceba049285c8ad0560a3031b0a684bcdb436ca2f0479f"
+  },
+  {
+   "filename": "na7/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na7/fold2/variables/variables.index",
+   "hash": "1cdde40af090409264280ca0f245c5d908f05fc7718296ef03e7b0ff024e8469"
+  },
+  {
+   "filename": "na7/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na7/fold2/variables/variables.data-00000-of-00001",
+   "hash": "959dbae273ce494e58465179c2992ddd1d7a0bed4cee5cd3fbadbc37e599e1da"
+  }
+ ],
+ "ua0": [
+  {
+   "filename": "ua0/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua0/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "ua0/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua0/quantiles.npy",
+   "hash": "dc981594ae1e7144f7ddd185e64d52bf6e12fd4b28756c035d39bcf9d9cd485e"
+  },
+  {
+   "filename": "ua0/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua0/fold5/saved_model.pb",
+   "hash": "f40c2ed5388c3a6e3530abfcf0267419a736f8a0377c62a50ef3936f84369d39"
+  },
+  {
+   "filename": "ua0/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua0/fold5/variables/variables.index",
+   "hash": "26d2a9ac04e8e3b8bd2c572c6b0508d9c50278e70b937c7d13aff19317af4bcd"
+  },
+  {
+   "filename": "ua0/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua0/fold5/variables/variables.data-00000-of-00001",
+   "hash": "117bedc49a9f075c0449d279b2d404f3f7666255afe2a042cc521c0e8c610eac"
+  },
+  {
+   "filename": "ua0/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua0/fold3/saved_model.pb",
+   "hash": "1ae09868f461ad194e894b7133b5c451a2ef317a6519ad6e116a775a43a87e31"
+  },
+  {
+   "filename": "ua0/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua0/fold3/variables/variables.index",
+   "hash": "e9ab7991702d1c38335d15978add4a5ef2789201243d359df39fa514ebbdac7c"
+  },
+  {
+   "filename": "ua0/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua0/fold3/variables/variables.data-00000-of-00001",
+   "hash": "ed5f4afb8d0b2eeb1aa8a5fe1e58b01ec230739358fe677197f617736c05822f"
+  },
+  {
+   "filename": "ua0/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua0/fold1/saved_model.pb",
+   "hash": "ee51ec372132937d83d3e2f768aa897402d28717c50d9bf50975a8ae2ef9130d"
+  },
+  {
+   "filename": "ua0/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua0/fold1/variables/variables.index",
+   "hash": "b8de50def4ba0a5a9bca45eb34ed86582f863244f5fce0844738f7e4e8fec853"
+  },
+  {
+   "filename": "ua0/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua0/fold1/variables/variables.data-00000-of-00001",
+   "hash": "82430b537d988efef4e5192ada7c21641c0f0b65ad43a9bcf7d7bcce821d64f9"
+  },
+  {
+   "filename": "ua0/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua0/fold4/saved_model.pb",
+   "hash": "1e8788fb7cc5c56ccaead4fbfab646a531112a286af4f846873d984f18d4e1f9"
+  },
+  {
+   "filename": "ua0/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua0/fold4/variables/variables.index",
+   "hash": "587908204f6a9b0f2d7dab24beea596a94d262945bdf5fb7131a615b75f51970"
+  },
+  {
+   "filename": "ua0/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua0/fold4/variables/variables.data-00000-of-00001",
+   "hash": "6bf5e11344117db3e6237365836c10d08ee19a1b1113936b43a0789aeeb30ee5"
+  },
+  {
+   "filename": "ua0/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua0/fold2/saved_model.pb",
+   "hash": "de80f858aff4f151c4568e3bf1e4a7f15a1ad138c7e9b32b009ae8d258110999"
+  },
+  {
+   "filename": "ua0/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua0/fold2/variables/variables.index",
+   "hash": "ee3f249d4905869083c5f89434ff477bf792bd001a975c8e0551a9eafb7558d0"
+  },
+  {
+   "filename": "ua0/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua0/fold2/variables/variables.data-00000-of-00001",
+   "hash": "eb350e4156378af2390f7909a00fb6fd8f947b7425262f7ac2e05876026677cf"
+  }
+ ],
+ "na1": [
+  {
+   "filename": "na1/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na1/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "na1/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na1/quantiles.npy",
+   "hash": "3931ac466a394f84f570bc9ea361a878d595c6351c24c3502b015c5988bfe063"
+  },
+  {
+   "filename": "na1/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na1/fold5/saved_model.pb",
+   "hash": "5193af37f805b350d805908b7579a367c87fba9cb2354425f4e7ebee4c55f715"
+  },
+  {
+   "filename": "na1/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na1/fold5/variables/variables.index",
+   "hash": "ad7b674e8fc2714e77dc8f5447c06c6f187079fb712c3e231f73f32eb9829807"
+  },
+  {
+   "filename": "na1/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na1/fold5/variables/variables.data-00000-of-00001",
+   "hash": "4064b22ea1bc447a3633725edd41a7cae44899beb9b6889358603225a30a3acc"
+  },
+  {
+   "filename": "na1/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na1/fold3/saved_model.pb",
+   "hash": "89b049675859e12e2a0ddace07fdc1520a2f83eab40d901e4ab4db48dc3d7c9b"
+  },
+  {
+   "filename": "na1/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na1/fold3/variables/variables.index",
+   "hash": "9fa9087a4691af1ab5acf04baecbb443c33ec31f7f630dbdbb800bea6e88b9c6"
+  },
+  {
+   "filename": "na1/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na1/fold3/variables/variables.data-00000-of-00001",
+   "hash": "bc82251e8fdc928d55ee2c92f1cec2721b3322f6e8affe2ec72fe837dad64335"
+  },
+  {
+   "filename": "na1/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na1/fold1/saved_model.pb",
+   "hash": "f50b1699f25263ae159c7e674119b189d8e9335642da05df2d138463818f4c75"
+  },
+  {
+   "filename": "na1/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na1/fold1/variables/variables.index",
+   "hash": "2bd35875beb0fb1d817c743ea58fe21c43de558900555ff17eb9461b0e346b56"
+  },
+  {
+   "filename": "na1/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na1/fold1/variables/variables.data-00000-of-00001",
+   "hash": "445f23a880155fad3a6fd78cfaf814552868a1bfe0d7b386a90b8cf685de3509"
+  },
+  {
+   "filename": "na1/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na1/fold4/saved_model.pb",
+   "hash": "d1edfc38507c6a7073416017d72c8a6d08573d33f0267449f958fc81623d128d"
+  },
+  {
+   "filename": "na1/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na1/fold4/variables/variables.index",
+   "hash": "68b8cfbe22b3c70d79ab5a077888f60f3197559e22b360a1fb605b57eac3ded6"
+  },
+  {
+   "filename": "na1/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na1/fold4/variables/variables.data-00000-of-00001",
+   "hash": "05437760deaf5791465bb12ca8c427c60e5cca5850537b90da7138c7135e63c1"
+  },
+  {
+   "filename": "na1/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na1/fold2/saved_model.pb",
+   "hash": "5f57b0efcd4d61f1f65990612fb1ddbddc99a990712b67e6562724253676eb31"
+  },
+  {
+   "filename": "na1/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na1/fold2/variables/variables.index",
+   "hash": "06e4fe079b68fcee205572d23feb61e6055ea0e791cbb0a4a50985bce28cdf35"
+  },
+  {
+   "filename": "na1/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na1/fold2/variables/variables.data-00000-of-00001",
+   "hash": "a89824ce11d087ba9ac327ada2ea052099951bdbdd2a69dc0ba8df174a2929e0"
+  }
+ ],
+ "ti": [
+  {
+   "filename": "ti/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ti/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "ti/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ti/quantiles.npy",
+   "hash": "4e6ffd107c8cd77cb8c0ce8060bca4f54f51ee0efa164289bff9fb37c9e7b754"
+  },
+  {
+   "filename": "ti/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ti/fold5/saved_model.pb",
+   "hash": "b0bf1dd7b179493a3175a03ad77c4ba06d6f3992aedaf973a783022a199f675b"
+  },
+  {
+   "filename": "ti/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ti/fold5/variables/variables.index",
+   "hash": "96975e854192eb9e043b5c701423b272b7c79d82973e10cb50c0ae440758ebfd"
+  },
+  {
+   "filename": "ti/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ti/fold5/variables/variables.data-00000-of-00001",
+   "hash": "db90225eb625a6ed2938764dd1d692bdd1938b5e4bd5a35d797837881d34cda6"
+  },
+  {
+   "filename": "ti/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ti/fold3/saved_model.pb",
+   "hash": "2d376b22b67c1783f35e257887c256cd20f7a0b8f56da7fd4bc7127a7ea62774"
+  },
+  {
+   "filename": "ti/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ti/fold3/variables/variables.index",
+   "hash": "df6c1c4663a4ca1dc6b73f614fd374c52b4bac4bd7beba720330bee5a11785cc"
+  },
+  {
+   "filename": "ti/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ti/fold3/variables/variables.data-00000-of-00001",
+   "hash": "0d4bdcc687da96e25be8791c441b3f433380c2249f071aa56838b0953f587d89"
+  },
+  {
+   "filename": "ti/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ti/fold1/saved_model.pb",
+   "hash": "5b238add5a9666b9b7bf050897f4aa92ee477a7ff7c107bfdad67ab5b6670fbe"
+  },
+  {
+   "filename": "ti/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ti/fold1/variables/variables.index",
+   "hash": "7a179f05b5ec5c4fe8ea52d45eee0580e7994b7bb99d09954a8fab5d2df67e65"
+  },
+  {
+   "filename": "ti/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ti/fold1/variables/variables.data-00000-of-00001",
+   "hash": "541af93831facfe9e5446557312d68cebe3f2b9c5ffa24f22a422bd5f7b90a2b"
+  },
+  {
+   "filename": "ti/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ti/fold4/saved_model.pb",
+   "hash": "39db3600d602ff4d9b977bd237d007eef967f2c0619d69963a36387c186e82de"
+  },
+  {
+   "filename": "ti/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ti/fold4/variables/variables.index",
+   "hash": "46dd00197523d836138a689b92cef4cd7206fae9aea2b188515b92ce0568a7c9"
+  },
+  {
+   "filename": "ti/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ti/fold4/variables/variables.data-00000-of-00001",
+   "hash": "94fcb79d720c0cade9adc48f71762ff4c60a48f55ecb05bb120e4cf2cb2c722d"
+  },
+  {
+   "filename": "ti/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ti/fold2/saved_model.pb",
+   "hash": "f0305c93969eb6d3944d07c8a9877cc61f960c01b5bab4ff3c9fdd31a0d8e980"
+  },
+  {
+   "filename": "ti/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ti/fold2/variables/variables.index",
+   "hash": "061f450f3ef6c2e230b338598b552adb752dc66df86733eec6d7190f956432fe"
+  },
+  {
+   "filename": "ti/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ti/fold2/variables/variables.data-00000-of-00001",
+   "hash": "540e65baeafe84bf03af5dc3e9407ded84baaa89789d627a1959c67347fe3767"
+  }
+ ],
+ "ua5": [
+  {
+   "filename": "ua5/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua5/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "ua5/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua5/quantiles.npy",
+   "hash": "3209ca0d023fae386543b43e481d0c5b4af492c7d42d4bddc7d38fedca0658d6"
+  },
+  {
+   "filename": "ua5/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua5/fold5/saved_model.pb",
+   "hash": "0d32950a5e0d6a110da7435fd84b05822e030acecfddb95983f0aa91f0118724"
+  },
+  {
+   "filename": "ua5/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua5/fold5/variables/variables.index",
+   "hash": "12bacd9588414b1634b0a346f0a759feb85ec3d312c27cb9a69874c212c40949"
+  },
+  {
+   "filename": "ua5/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua5/fold5/variables/variables.data-00000-of-00001",
+   "hash": "c5b95fab4dea19d2552f6be2277b8851f0c28c93ddaebe2a3c79afff2e968e00"
+  },
+  {
+   "filename": "ua5/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua5/fold3/saved_model.pb",
+   "hash": "4b3fafadae4c043387595cb47db0ee46312dad38a53f9bedd89ceb3465cb0571"
+  },
+  {
+   "filename": "ua5/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua5/fold3/variables/variables.index",
+   "hash": "34115530f838a98f2904915c94316d5596901847b31941673bea351ef4eb0b93"
+  },
+  {
+   "filename": "ua5/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua5/fold3/variables/variables.data-00000-of-00001",
+   "hash": "df97d8d6bfc5ce9248bed102012dc891afa33eadc6a8053923afe6d8b2443f30"
+  },
+  {
+   "filename": "ua5/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua5/fold1/saved_model.pb",
+   "hash": "980f47b4887931260db37e289d13a27c1b504e83024798e124c350b4822bb270"
+  },
+  {
+   "filename": "ua5/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua5/fold1/variables/variables.index",
+   "hash": "ca142aded27ec4949244d5c54a92a36c9bd00c43c47cfbb8c26f534dfc64d6c2"
+  },
+  {
+   "filename": "ua5/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua5/fold1/variables/variables.data-00000-of-00001",
+   "hash": "9b7bab03bff4fb5d1c2821274213f79af5ec53703c2530ada4b0c1e1b37c1e25"
+  },
+  {
+   "filename": "ua5/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua5/fold4/saved_model.pb",
+   "hash": "09e2d729a85661f9aefaeb8a28d33766148a04819f9575ee840b19a06c4de050"
+  },
+  {
+   "filename": "ua5/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua5/fold4/variables/variables.index",
+   "hash": "edd0e2122ed6a31ac406dfa70f7c65652cb63f208b746aad28ec9001b184c37a"
+  },
+  {
+   "filename": "ua5/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua5/fold4/variables/variables.data-00000-of-00001",
+   "hash": "7433fbc9d3da70c2aba660afa80dc17b57f612291069df4d85f472763fb71ce6"
+  },
+  {
+   "filename": "ua5/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua5/fold2/saved_model.pb",
+   "hash": "ab49dd314ae39cc03463bdc9771f4ba3c086c3255bd65796f7a9498c0bc6a467"
+  },
+  {
+   "filename": "ua5/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua5/fold2/variables/variables.index",
+   "hash": "ded5c8006e92bdd8e35be5ba91d984fea6ba2cfc9f5c01365ad726c7f1444d1f"
+  },
+  {
+   "filename": "ua5/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua5/fold2/variables/variables.data-00000-of-00001",
+   "hash": "739c2136031f31ed201c33a3b79b410d2543167d5b5da88d9dcb7ae3285dea9f"
+  }
+ ],
+ "ua1": [
+  {
+   "filename": "ua1/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua1/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "ua1/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua1/quantiles.npy",
+   "hash": "2154e22ce28c8a98d51a8c6465c1450943e2ce17e6d24f6c4f6b9ca265fff2ed"
+  },
+  {
+   "filename": "ua1/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua1/fold5/saved_model.pb",
+   "hash": "7f639d289bf6015e5849bc8c3d43b0bb515c62424b098c09d2dc715715e4e738"
+  },
+  {
+   "filename": "ua1/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua1/fold5/variables/variables.index",
+   "hash": "10ed96bf5c4dc037dece85167876a55ee3f103c56a01bed6711dc628aba277e3"
+  },
+  {
+   "filename": "ua1/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua1/fold5/variables/variables.data-00000-of-00001",
+   "hash": "5fc47d931f10898150466c7dcd416f4b01bfeaf92b07f10b56cdbec8ec074975"
+  },
+  {
+   "filename": "ua1/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua1/fold3/saved_model.pb",
+   "hash": "138121280fdeb1298802b63c3157f7ee88a47269e6326ce651a66cac962531ea"
+  },
+  {
+   "filename": "ua1/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua1/fold3/variables/variables.index",
+   "hash": "a4e5d977c10c627d0791ce576b4f7e54383b3372f0ab57f3cfa5d9c5c54489aa"
+  },
+  {
+   "filename": "ua1/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua1/fold3/variables/variables.data-00000-of-00001",
+   "hash": "f1b85215ccc7cfcddad8df7c6390fbda09c0951b9f03df4fc00dd0685c52e4d0"
+  },
+  {
+   "filename": "ua1/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua1/fold1/saved_model.pb",
+   "hash": "4a819642757c9cde1f7e8440d1fec268d329f96e4d31429d69f13f5bea733d8d"
+  },
+  {
+   "filename": "ua1/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua1/fold1/variables/variables.index",
+   "hash": "4d486ac90ae996f9b17b335d325e803b6d450190e98b8ab9ef83c204aa0776a6"
+  },
+  {
+   "filename": "ua1/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua1/fold1/variables/variables.data-00000-of-00001",
+   "hash": "bba228c24f01dbe898430bccc13d8282dbb38b697b04e49fcaee8ffb5c5b7eb8"
+  },
+  {
+   "filename": "ua1/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua1/fold4/saved_model.pb",
+   "hash": "d4329bb28e6dc01d06ec58a1fd0c87da17cf1d8535a1529c83bcc0c156a68519"
+  },
+  {
+   "filename": "ua1/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua1/fold4/variables/variables.index",
+   "hash": "8c588d60bd05263e75aa0390d7728608c51d023d58798b4e160b2e25e313b7b1"
+  },
+  {
+   "filename": "ua1/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua1/fold4/variables/variables.data-00000-of-00001",
+   "hash": "0aff7bd4cce426b17c5599ad4380efd90973a854110840fa94bb4bef841d6702"
+  },
+  {
+   "filename": "ua1/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua1/fold2/saved_model.pb",
+   "hash": "e2fbe3f49a24e6266be5a53fddb8555ba0b82c8bf199737065b7ad7d1a4f641b"
+  },
+  {
+   "filename": "ua1/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua1/fold2/variables/variables.index",
+   "hash": "edcc5fcc0b28d7f18037d36ae4459fae77d352864c7265fa110e44a3c937f3fd"
+  },
+  {
+   "filename": "ua1/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua1/fold2/variables/variables.data-00000-of-00001",
+   "hash": "ab2593ca15b928e8cc6b7f3f93d6c36346f54fc30f57916f08b104f3f0af706e"
+  }
+ ],
+ "na2": [
+  {
+   "filename": "na2/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na2/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "na2/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na2/quantiles.npy",
+   "hash": "6a593f160e92e00d4e29c056158cb750981b24b8203716b0a73dc945998094e0"
+  },
+  {
+   "filename": "na2/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na2/fold5/saved_model.pb",
+   "hash": "aeabe4a083031f07851876ec41f369396c65fef966af577c80ab82eba18deddd"
+  },
+  {
+   "filename": "na2/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na2/fold5/variables/variables.index",
+   "hash": "2ddef88c8a0af65645267d212c3e8d9efaae04b61b390e2de9b1501913a08c7a"
+  },
+  {
+   "filename": "na2/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na2/fold5/variables/variables.data-00000-of-00001",
+   "hash": "989be60d1b185cf6212a647daae848ed7b8dccf558daa5803ee3b86bd91c125f"
+  },
+  {
+   "filename": "na2/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na2/fold3/saved_model.pb",
+   "hash": "58701fc9c07cea88d2bbebecf8972ecd9ed3d6c503bf00594224196ab6998a3b"
+  },
+  {
+   "filename": "na2/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na2/fold3/variables/variables.index",
+   "hash": "a6803d251e755aa01f9ad05b2966abcf405c62bb87f930dd304c2d07785c9247"
+  },
+  {
+   "filename": "na2/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na2/fold3/variables/variables.data-00000-of-00001",
+   "hash": "3f4013cf17ceb179149d4e53b45c0e32f109eeb13c0e0678fe2024372cc84e63"
+  },
+  {
+   "filename": "na2/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na2/fold1/saved_model.pb",
+   "hash": "fdc67519792565cfe26a829998ee78b3a55514493344db4023b05946300ac9ad"
+  },
+  {
+   "filename": "na2/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na2/fold1/variables/variables.index",
+   "hash": "20c43b9605e93837bf1ad3d112d056fcbbebe9003dea8e1d7dfda5acee55b089"
+  },
+  {
+   "filename": "na2/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na2/fold1/variables/variables.data-00000-of-00001",
+   "hash": "b2a9ad894095e151d92cbf15f4bd12d1b1b25f4ca5e8c087bcf48c05a0c40458"
+  },
+  {
+   "filename": "na2/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na2/fold4/saved_model.pb",
+   "hash": "cf99f2267b8acefcd0b5caec7a3039d800a42c77e99c08bd8e44936e0c66e94a"
+  },
+  {
+   "filename": "na2/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na2/fold4/variables/variables.index",
+   "hash": "c1514fb7b40e3f0c90ad77db2513e2b46351c339a9751eef783e727d839af48b"
+  },
+  {
+   "filename": "na2/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na2/fold4/variables/variables.data-00000-of-00001",
+   "hash": "07c5401a0203ba79e2df5dd1776b3984fecb8228e2744c16032e2e614dfe1a12"
+  },
+  {
+   "filename": "na2/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na2/fold2/saved_model.pb",
+   "hash": "34de516faf712cbcb40d7ddf1d96433132c0be598742ab11afe60c11536aab67"
+  },
+  {
+   "filename": "na2/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na2/fold2/variables/variables.index",
+   "hash": "59a88df8fc0c8c416fb7b5329be9e40f3e245831d5b680795a7ecc74f53cf721"
+  },
+  {
+   "filename": "na2/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na2/fold2/variables/variables.data-00000-of-00001",
+   "hash": "8f55173a81a251c8c5ebde8bb44a081311774240add0d8cbc3d52c22bdac5d8e"
+  }
+ ],
+ "ua6": [
+  {
+   "filename": "ua6/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua6/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "ua6/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua6/quantiles.npy",
+   "hash": "c476a40ee3c168ab572b838e9316bec61bdfb4333374052b3f59261cf5da1ecf"
+  },
+  {
+   "filename": "ua6/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua6/fold5/saved_model.pb",
+   "hash": "6e3ca441b4d8e14e526a3f89de53fc04fff51e03b30cc8f8a33fe3d79c1d5302"
+  },
+  {
+   "filename": "ua6/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua6/fold5/variables/variables.index",
+   "hash": "d3d0f193147b2fe3d114326bf1356259c63716c027a79a377bcdbf971da4ea71"
+  },
+  {
+   "filename": "ua6/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua6/fold5/variables/variables.data-00000-of-00001",
+   "hash": "8b9750d01a233cd26616b9a5a93c4f0792e4c82c5b4e198eb0319db062e6acd5"
+  },
+  {
+   "filename": "ua6/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua6/fold3/saved_model.pb",
+   "hash": "6bce50e1b21ba3085fed60497019146400800230f0b5f91ab7d6fc06a4213289"
+  },
+  {
+   "filename": "ua6/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua6/fold3/variables/variables.index",
+   "hash": "a9c3cc929d11e5fd50c81a1fa15d6f6193e8740ff58a14aefa0281f319755e48"
+  },
+  {
+   "filename": "ua6/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua6/fold3/variables/variables.data-00000-of-00001",
+   "hash": "fb81f1628b53a7846fd7c20ce369e3b46fdfb432d42019572040f4de9120473d"
+  },
+  {
+   "filename": "ua6/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua6/fold1/saved_model.pb",
+   "hash": "01b4298904fd03c96f78ef1b3546ad6144d0c01a69c20136e3bcadea2d774db7"
+  },
+  {
+   "filename": "ua6/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua6/fold1/variables/variables.index",
+   "hash": "2fd0d053059f4c23fa3cd1100a8573f589c54b39edd9490ee7b148ae95d6ef89"
+  },
+  {
+   "filename": "ua6/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua6/fold1/variables/variables.data-00000-of-00001",
+   "hash": "31250613a27c7c64b0a2574c68463c384f7088043060f310fb828f828da05142"
+  },
+  {
+   "filename": "ua6/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua6/fold4/saved_model.pb",
+   "hash": "edee3c454dd9218d488cee72869da3f1fdb57cbd8c2670939f4e44572ae330dc"
+  },
+  {
+   "filename": "ua6/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua6/fold4/variables/variables.index",
+   "hash": "636e22403d214e2dd008fe3cedb172c6ab26d2b0b5580e8db9d0f3b2caeca25c"
+  },
+  {
+   "filename": "ua6/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua6/fold4/variables/variables.data-00000-of-00001",
+   "hash": "4e3cbe34148e040fb59bfa17d73f46a5deab98093ce12ad50bceddd19f63f4a1"
+  },
+  {
+   "filename": "ua6/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua6/fold2/saved_model.pb",
+   "hash": "088bfdec168a1b14f3ce21fbbc59825502a757404983c743db0a914243d4a475"
+  },
+  {
+   "filename": "ua6/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua6/fold2/variables/variables.index",
+   "hash": "1783a93bfa7238cd89e201c810fdc81f148e8efada131417d8f288298d0ec242"
+  },
+  {
+   "filename": "ua6/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua6/fold2/variables/variables.data-00000-of-00001",
+   "hash": "72b786f7e7e699f54ace0c72d021363fd5220a735ee5abca2350a3cb9cfaddc4"
+  }
+ ],
+ "ua2": [
+  {
+   "filename": "ua2/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua2/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "ua2/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua2/quantiles.npy",
+   "hash": "2275229015f7199a0c331c447cc9cdb147e7ae5c5041da1b0a24facbd1e24261"
+  },
+  {
+   "filename": "ua2/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua2/fold5/saved_model.pb",
+   "hash": "2e4ba5a9be3cc6e19ffe0b0c306230ff27f044be8dcce129d1237400e6ec05e9"
+  },
+  {
+   "filename": "ua2/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua2/fold5/variables/variables.index",
+   "hash": "57054220ea864ac10856acbd4964ecf985dbc98814715b65399d4f6faa0c1c8e"
+  },
+  {
+   "filename": "ua2/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua2/fold5/variables/variables.data-00000-of-00001",
+   "hash": "fae3593a92b4358656c006705701caa2806fac513cc875b81bb9d65b54a31f01"
+  },
+  {
+   "filename": "ua2/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua2/fold3/saved_model.pb",
+   "hash": "e84ce074cf5978dd1750eecff80b87f8ac2b31c1a5dd6c675c624a4cfa2e89b1"
+  },
+  {
+   "filename": "ua2/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua2/fold3/variables/variables.index",
+   "hash": "09d1007ddee5e5abd3c3c754c4e3b3e8ac60adb3e3b50290c0d47d8d8d70909f"
+  },
+  {
+   "filename": "ua2/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua2/fold3/variables/variables.data-00000-of-00001",
+   "hash": "297415411ccf23b6930fcd42f37de0cbef44ffcf8b53b780ff62b8980607f112"
+  },
+  {
+   "filename": "ua2/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua2/fold1/saved_model.pb",
+   "hash": "a3b36be71e300cda30f29a2eb2741c83b419fd437b1da8584c4506cf1a0e8e15"
+  },
+  {
+   "filename": "ua2/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua2/fold1/variables/variables.index",
+   "hash": "d02d5b879b61456ec45be5a1e767d6fe92a731a450a1ee45515267f6bd1c9083"
+  },
+  {
+   "filename": "ua2/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua2/fold1/variables/variables.data-00000-of-00001",
+   "hash": "2392dec7c45a0af69cd17bff06ae8aacbca322eac2ed0c96e05f4e2502542cc3"
+  },
+  {
+   "filename": "ua2/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua2/fold4/saved_model.pb",
+   "hash": "e16dfe3b333e5ca23a75774f885beebe755aa5793c20f09c63337804b7626c66"
+  },
+  {
+   "filename": "ua2/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua2/fold4/variables/variables.index",
+   "hash": "499e0fed7f4a987bc03728d51a2f41a9d226a589302fec50b914526c70d7c3a0"
+  },
+  {
+   "filename": "ua2/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua2/fold4/variables/variables.data-00000-of-00001",
+   "hash": "43c77d0a5d8e31f7e90ed2b0b288b41775d3944f2de653f2c3e1993b429d404b"
+  },
+  {
+   "filename": "ua2/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua2/fold2/saved_model.pb",
+   "hash": "ee5af8ab3398201bd4fcaff86b6f6905438d47deeb5a6d94f1fcf6e7a70baff5"
+  },
+  {
+   "filename": "ua2/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua2/fold2/variables/variables.index",
+   "hash": "5bc10e04eaf8f7694923db5c161cc6cb031994f549e7e58d11d3921edb18ce0b"
+  },
+  {
+   "filename": "ua2/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua2/fold2/variables/variables.data-00000-of-00001",
+   "hash": "a26412642c60a9674a008a6954d86cbf2a45c70186bcdfddd94a1440e36ba489"
+  }
+ ],
+ "pwmxap": [
+  {
+   "filename": "pwmxap/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/pwmxap/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "pwmxap/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/pwmxap/quantiles.npy",
+   "hash": "8f788c0dfef460ac35c1e1986f81c58a16405bb7f5a30209503feb4787187413"
+  },
+  {
+   "filename": "pwmxap/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/pwmxap/fold5/saved_model.pb",
+   "hash": "f18ab814d3937da6a58517f31ee0721ebb86330aa1156215f5c731c0e7a7fef2"
+  },
+  {
+   "filename": "pwmxap/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/pwmxap/fold5/variables/variables.index",
+   "hash": "d27ea1bac584d8d4f828cce27fcd33e031349a0b9b58127e4c2a738935371f2c"
+  },
+  {
+   "filename": "pwmxap/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/pwmxap/fold5/variables/variables.data-00000-of-00001",
+   "hash": "67519fc5a236919fec8414bb26ff9326c232bced70d739397ab56b283bfd3a38"
+  },
+  {
+   "filename": "pwmxap/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/pwmxap/fold3/saved_model.pb",
+   "hash": "1bda4084f3f80da86f7e2b2fe0cd54bf5b52a2c6f5099f601058f87c6c587bac"
+  },
+  {
+   "filename": "pwmxap/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/pwmxap/fold3/variables/variables.index",
+   "hash": "dcb6429dece3c52fda81a7da49789e0c5cd8455567bf448cbd32f1a4b16e3e0c"
+  },
+  {
+   "filename": "pwmxap/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/pwmxap/fold3/variables/variables.data-00000-of-00001",
+   "hash": "c03d5bb55601a45e778a6fd93e262a06499c6b4afc9213743914d7a89b30101f"
+  },
+  {
+   "filename": "pwmxap/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/pwmxap/fold1/saved_model.pb",
+   "hash": "680526b422eeabef469689abe5ee6069c14c96ed6a2180422865382206b37f9a"
+  },
+  {
+   "filename": "pwmxap/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/pwmxap/fold1/variables/variables.index",
+   "hash": "a2c10001aa2369d9b528ccf345af4c69b22ac2ca74d914c6a83ee9196acde150"
+  },
+  {
+   "filename": "pwmxap/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/pwmxap/fold1/variables/variables.data-00000-of-00001",
+   "hash": "22183bf3457e73d47974949df69436efad9f24fc76a7ba737838eba7f7e582e9"
+  },
+  {
+   "filename": "pwmxap/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/pwmxap/fold4/saved_model.pb",
+   "hash": "6e29357be21983aee02fc9ada59ea0bc3aa34fa6bfaf2d4d2737375305f4c8d6"
+  },
+  {
+   "filename": "pwmxap/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/pwmxap/fold4/variables/variables.index",
+   "hash": "ec7a5564788653a0c84dc43dab556b226a0a356953c7bc49a4ada87f91f4b550"
+  },
+  {
+   "filename": "pwmxap/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/pwmxap/fold4/variables/variables.data-00000-of-00001",
+   "hash": "e4ed9c54cda36dafc3218b9068a6e3e7a52e38cee8f21c67e2ede75c1d6dab51"
+  },
+  {
+   "filename": "pwmxap/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/pwmxap/fold2/saved_model.pb",
+   "hash": "35b90a0859cca526842115ab47c07f174bd0454e09e63772b91386da14b33e92"
+  },
+  {
+   "filename": "pwmxap/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/pwmxap/fold2/variables/variables.index",
+   "hash": "2982ccafb8f1d17e61f58e8090ec462ba152256e3fb0ce0f8c7b95c3849864bf"
+  },
+  {
+   "filename": "pwmxap/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/pwmxap/fold2/variables/variables.data-00000-of-00001",
+   "hash": "ec535f82ebd72954703c3a4ac5c62fdbde2efdc005061c17c5d586cacfaf4dc3"
+  }
+ ],
+ "na3": [
+  {
+   "filename": "na3/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na3/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "na3/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na3/quantiles.npy",
+   "hash": "34d59b6e62c0883bd0c9c2a1ce0ab347295d84430df7cf7269583ff2bde2736f"
+  },
+  {
+   "filename": "na3/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na3/fold5/saved_model.pb",
+   "hash": "08faea71045386fe6d3c344c8a8c65233ef77d0eebedb1e1b43a92ef2e7a1f39"
+  },
+  {
+   "filename": "na3/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na3/fold5/variables/variables.index",
+   "hash": "e41afdb727c33d2cbbb54493ddd5f41b8de9b26860cd9ab8ca8b26b8d7ac3e81"
+  },
+  {
+   "filename": "na3/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na3/fold5/variables/variables.data-00000-of-00001",
+   "hash": "ecec3efd235ae1bb033ef4f8e7d5951d73dee6b2ebc0380fc3e828f26f2a3594"
+  },
+  {
+   "filename": "na3/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na3/fold3/saved_model.pb",
+   "hash": "8a7bb52ba02f5059bd70dae32c9f4fa40e38c7b2aaa561010084441e487933e1"
+  },
+  {
+   "filename": "na3/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na3/fold3/variables/variables.index",
+   "hash": "5be5ac886280de257ccf73c18fc94f36df0c229a2171d73398dc1c337ddacba1"
+  },
+  {
+   "filename": "na3/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na3/fold3/variables/variables.data-00000-of-00001",
+   "hash": "d4a54a74f69d652bbe037127751416a5f7e6b06de1bd5d92cf93e8ff1fb852cb"
+  },
+  {
+   "filename": "na3/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na3/fold1/saved_model.pb",
+   "hash": "53ce8f64a42815193b578c80f24e1b63705e1a8b87a7e3c853ab2bc9f60e85e9"
+  },
+  {
+   "filename": "na3/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na3/fold1/variables/variables.index",
+   "hash": "3e38996746fefd0f773b8eadc0c2f677001773ac54181d5996f654f05ff0273a"
+  },
+  {
+   "filename": "na3/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na3/fold1/variables/variables.data-00000-of-00001",
+   "hash": "795fcdc742ac20521371d586eebc9c56c65bf0d209d51ebddb98ed2e9ce35517"
+  },
+  {
+   "filename": "na3/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na3/fold4/saved_model.pb",
+   "hash": "021c31924d4fb4da35b9a639ca9949574045c181906f3c0f9afab18d2650f415"
+  },
+  {
+   "filename": "na3/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na3/fold4/variables/variables.index",
+   "hash": "549e02eda7d162d45bb3f8279850aa4c8c579aa2e0f77059dc08a18cd7aa50b5"
+  },
+  {
+   "filename": "na3/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na3/fold4/variables/variables.data-00000-of-00001",
+   "hash": "e70cad6163d5b4899e9bd43c0626dc3e6817b5a0c58d6e3e3f2c08f1319eaa75"
+  },
+  {
+   "filename": "na3/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na3/fold2/saved_model.pb",
+   "hash": "7c7329bb501cd47e6768684c20b955ff8874ef1be7287dae338c71305aab3148"
+  },
+  {
+   "filename": "na3/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na3/fold2/variables/variables.index",
+   "hash": "956b77bd9e1cdebbc9431be581765d608dd91f673cf1e2a71b1ec6b5bb7fca4d"
+  },
+  {
+   "filename": "na3/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/na3/fold2/variables/variables.data-00000-of-00001",
+   "hash": "5fd477e442e3ad1261df683a6bc3c8e911a16eb29e3a764650bf5bc526ca7533"
+  }
+ ],
+ "ua7": [
+  {
+   "filename": "ua7/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua7/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "ua7/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua7/quantiles.npy",
+   "hash": "8717d175de40317febde695eb55190f60809ca68ffcf215a23fb2942a91be542"
+  },
+  {
+   "filename": "ua7/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua7/fold5/saved_model.pb",
+   "hash": "dc104bf82047548acc81cbe9b1acd8342755d72dfc1fd9fceb1f42fc00d270b3"
+  },
+  {
+   "filename": "ua7/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua7/fold5/variables/variables.index",
+   "hash": "e6a729ed9a1f18d3e2cae0247958750d158efef3b84bd6a5315cee7fd34c279f"
+  },
+  {
+   "filename": "ua7/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua7/fold5/variables/variables.data-00000-of-00001",
+   "hash": "d40f8aa44424bb23e3bf40c56e43398dd2ccfb5b1cd2a620cae99d51a0cd1f08"
+  },
+  {
+   "filename": "ua7/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua7/fold3/saved_model.pb",
+   "hash": "bf8f9078666e5536f50610e31872edaaf8ddbd309e44520bb6bc63d4c126236a"
+  },
+  {
+   "filename": "ua7/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua7/fold3/variables/variables.index",
+   "hash": "5b4418d3fd4b85870f65a0e6df3744857188c9b601800db3213dc60e5a8d7f19"
+  },
+  {
+   "filename": "ua7/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua7/fold3/variables/variables.data-00000-of-00001",
+   "hash": "c56f535ddb637b77dda63db4c4fec001cb0a93956612a0bbab2484d8512014c0"
+  },
+  {
+   "filename": "ua7/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua7/fold1/saved_model.pb",
+   "hash": "78dbdd931f5a050d85bc6e7d1329c1b16c59fb139ef684c56c8d2dce880e3ef3"
+  },
+  {
+   "filename": "ua7/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua7/fold1/variables/variables.index",
+   "hash": "744ddae88d276436cc0d8eb6c21b798b5b93dc19cbc48ea67b931a68726cb81b"
+  },
+  {
+   "filename": "ua7/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua7/fold1/variables/variables.data-00000-of-00001",
+   "hash": "71ba79eb5576e171ea163e1d2f3cdd1ef29704094c753029deff30c9c9ea0025"
+  },
+  {
+   "filename": "ua7/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua7/fold4/saved_model.pb",
+   "hash": "f738104a5808c5cc4f34711e8c99cbe64fc1e046e2e063dbc41825c7e05451a8"
+  },
+  {
+   "filename": "ua7/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua7/fold4/variables/variables.index",
+   "hash": "bed1cd2cffba34d7efca11cb1a0134fead2ef335ac62648b70a733d03c5a384a"
+  },
+  {
+   "filename": "ua7/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua7/fold4/variables/variables.data-00000-of-00001",
+   "hash": "e8588cf823280d272c6f457588cb098707c2e40db825354e9940892a89d89578"
+  },
+  {
+   "filename": "ua7/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua7/fold2/saved_model.pb",
+   "hash": "eaa582210d143902f9957ccb6cffbcbbffdc8c953f86e5e9e0f2729d7ed03019"
+  },
+  {
+   "filename": "ua7/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua7/fold2/variables/variables.index",
+   "hash": "f2f0e93aec70ebbaf66152c21bb557461f4c147d2a8ad45fc5f818af31dcabb8"
+  },
+  {
+   "filename": "ua7/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua7/fold2/variables/variables.data-00000-of-00001",
+   "hash": "31393fb56375871e30accc94147063525f3549b04d01e2242836f6b935ea7215"
+  }
+ ],
+ "ua3": [
+  {
+   "filename": "ua3/references.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua3/references.npy",
+   "hash": "062ee48e0392b2ef070102a4d0ad304b692f95b1f6691932912a348cf718f415"
+  },
+  {
+   "filename": "ua3/quantiles.npy",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua3/quantiles.npy",
+   "hash": "f22a1656eea84c250c57f71cc52914921763c8cc07397572d9f3c7ee14c1e40b"
+  },
+  {
+   "filename": "ua3/fold5/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua3/fold5/saved_model.pb",
+   "hash": "f764ae5d906278290a0ba7509fb90c631ed7669ee4958496ababa1ecc6701e1f"
+  },
+  {
+   "filename": "ua3/fold5/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua3/fold5/variables/variables.index",
+   "hash": "53dfc962a94d6b362212f3d4fd99b0ba797157b211aed86d5ecd60d7175e8b7f"
+  },
+  {
+   "filename": "ua3/fold5/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua3/fold5/variables/variables.data-00000-of-00001",
+   "hash": "088b665536c3bd40ba23b7ee4fbe5a27ecc9bfd1535812f5d5264e83e6d1122f"
+  },
+  {
+   "filename": "ua3/fold3/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua3/fold3/saved_model.pb",
+   "hash": "1cf771a67f2c4b027ae68b9515815f46a9e2deaa86f487f1f053dfa3610dc535"
+  },
+  {
+   "filename": "ua3/fold3/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua3/fold3/variables/variables.index",
+   "hash": "3234155f5ca785d618f28f7c3fef88c4f164e8b6b7772276e71f94730c254217"
+  },
+  {
+   "filename": "ua3/fold3/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua3/fold3/variables/variables.data-00000-of-00001",
+   "hash": "feaa70258457b5b8521ebd1a2ba9a35fbbc949d4826d882e3cded34b861ba605"
+  },
+  {
+   "filename": "ua3/fold1/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua3/fold1/saved_model.pb",
+   "hash": "f68cfaf1303e6e35ccba118aa6cbe50dbfb3fa16cd9e16d9b81b7e389d1aab75"
+  },
+  {
+   "filename": "ua3/fold1/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua3/fold1/variables/variables.index",
+   "hash": "6fa27719d66769dd92f877ae632deb0c0568a4594b00ad7fd1fa7790c0045f66"
+  },
+  {
+   "filename": "ua3/fold1/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua3/fold1/variables/variables.data-00000-of-00001",
+   "hash": "74b38c70dfc6d4396e144cd45ffb4917069f02ecedd56b5ef7458351901976eb"
+  },
+  {
+   "filename": "ua3/fold4/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua3/fold4/saved_model.pb",
+   "hash": "5b161c40980f4512e5baab7f01f73dfba23328a99cd7b2144810c0948e9f43da"
+  },
+  {
+   "filename": "ua3/fold4/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua3/fold4/variables/variables.index",
+   "hash": "6ede153d2f474ea8c8ea6ec91503616e24463b6d97d785aaa98abc8a72905b29"
+  },
+  {
+   "filename": "ua3/fold4/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua3/fold4/variables/variables.data-00000-of-00001",
+   "hash": "538186fd8320b9875e76137ce50fa08425883a4e25dc82587ea412e57bd8cae3"
+  },
+  {
+   "filename": "ua3/fold2/saved_model.pb",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua3/fold2/saved_model.pb",
+   "hash": "f5fbd426b86b577dd2c5a45d438edee80083a6ffe139063280fd8368a79becaa"
+  },
+  {
+   "filename": "ua3/fold2/variables/variables.index",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua3/fold2/variables/variables.index",
+   "hash": "8e8585136be42a706f28b544764da1c432b01cf009532143b17ccad6393c10e2"
+  },
+  {
+   "filename": "ua3/fold2/variables/variables.data-00000-of-00001",
+   "url": "https://surfdrive.surf.nl/public.php/dav/files/iA4d5yiRKyx6oWz/ua3/fold2/variables/variables.data-00000-of-00001",
+   "hash": "2d5d381833d230361b04fc8708f400879238a6e4f35aea7c7fd6aade81cfbabf"
+  }
+ ]
+}

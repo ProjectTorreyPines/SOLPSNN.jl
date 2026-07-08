@@ -1,0 +1,7 @@
+# Large model artifacts live outside git (on $PSCRATCH); never commit them.
+solps-nn-data/
+solps-nn-onnx/
+*.onnx
+*.npy
+__pycache__/
+*.pyc
