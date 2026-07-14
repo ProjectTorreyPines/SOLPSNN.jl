@@ -31,7 +31,7 @@ using SpecialFunctions: erfc
 
 export SOLPSModel, load_model, predict, load_geometry, scaled_geometry
 export build_edge_profiles_ggd!, add_ggd_field!, ggd_time_slice!
-export build_edge_profiles_ggd_solps2imas!
+export build_edge_profiles_ggd_solps2imas!, bundled_b2fgmtry, R_JET
 
 include("quantile.jl")
 include("geometry.jl")
@@ -53,5 +53,16 @@ This is provided by the `SOLPS2imasExt` package extension and requires
 `SOLPS2imas` to be loaded alongside `SOLPSNN`.
 """
 function build_edge_profiles_ggd_solps2imas! end
+
+"""
+    bundled_b2fgmtry() -> String
+
+Absolute path to the SOLPS `b2fgmtry` grid file shipped inside the package
+(`convert/geometry_data/b2fgmtry`). This is the raw grid consumed by
+[`build_edge_profiles_ggd_solps2imas!`](@ref); unlike the (out-of-git) ONNX/npy
+artifacts, it travels with the installed package. Resolved at runtime via
+`pkgdir`, so it is robust to depot relocation.
+"""
+bundled_b2fgmtry() = pkgdir(SOLPSNN, "convert", "geometry_data", "b2fgmtry")
 
 end # module SOLPSNN

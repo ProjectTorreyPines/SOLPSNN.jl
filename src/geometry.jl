@@ -26,6 +26,14 @@ struct SOLPSGeometry
     vol::Matrix{Float64}    # (nx+2, ny+2)
 end
 
+"""
+Reference major radius of the fixed B2 grid, taken verbatim from the upstream
+SOLPS-NN `GeometryModel`. All machine sizes are represented by rescaling the
+grid with `R / R_JET`. Kept in sync with `convert/parse_geometry.py` and the
+`R_JET` field written into `geometry.json`.
+"""
+const R_JET = 3.000727179161820
+
 """number of poloidal x radial cells including guard cells: `(nx+2, ny+2)`."""
 grid_size(geo::SOLPSGeometry) = (geo.nx + 2, geo.ny + 2)
 
