@@ -101,12 +101,15 @@ skip gracefully if the artifacts are absent.
 
 ## Citation
 
-The SOLPS-NN model and its training are the work of Dasbach et al. If you use
-this wrapper, please cite:
+Users of the model are kindly asked to cite all of the following publications:
 
-> S. Dasbach et al., *Towards fast surrogate models for interpolation of tokamak
-> edge plasmas*, [arXiv:2604.19223](https://arxiv.org/abs/2604.19223).
+- Dasbach, S., & Wiesen, S. (2023). Towards fast surrogate models for
+  interpolation of tokamak edge plasmas. Nuclear Materials and Energy, 34,
+  101396. <https://doi.org/10.1016/j.nme.2023.101396>
+- Wiesen, S., et al. (2024). Data-driven models in fusion exhaust: AI methods
+  and perspectives. Nuclear Fusion, 64(8), 086046.
+  <https://doi.org/10.1088/1741-4326/ad5a1d>
+- S. Dasbach et al., Towards fast surrogate models for interpolation of tokamak
+  edge plasmas, [arXiv:2604.19223](https://arxiv.org/abs/2604.19223).
 
-Related: Dasbach, S. & Wiesen, S. (2023), Nucl. Mater. Energy 34, 101396;
-Wiesen, S. et al. (2024), Nucl. Fusion 64, 086046. Upstream model:
-<https://github.com/sdasbach/solps-nn>.
+Upstream model: <https://github.com/sdasbach/solps-nn>.
