@@ -3,6 +3,12 @@ import SOLPSNN
 import NPZ
 import IMASdd as IMAS
 
+# CI safety belt: never trigger the (multi-GB, conda-based) TF->ONNX conversion
+# from the test suite. Artifact-dependent tests already skip without a local
+# cache; this guarantees a stray `load_model` errors fast instead of attempting
+# a SURFdrive fetch + conversion on a runner. Respect an explicit override.
+get!(ENV, "FUSE_SOLPS_NN_AUTOCONVERT", "0")
+
 const DATA = joinpath(@__DIR__, "data")
 
 # SOLPS2imas is an optional (weak) dependency exercised via the SOLPS2imasExt
