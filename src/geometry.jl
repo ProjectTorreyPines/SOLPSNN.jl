@@ -51,9 +51,16 @@ function load_geometry(dir::AbstractString)
     cry = Float64.(NPZ.npzread(joinpath(gdir, "cry.npy")))
     vol = Float64.(NPZ.npzread(joinpath(gdir, "vol.npy")))
     return SOLPSGeometry(
-        Int(meta["nx"]), Int(meta["ny"]),
-        Int(meta["leftcut"]), Int(meta["rightcut"]), Int(meta["topcut"]),
-        Float64(meta["R_JET"]), crx, cry, vol)
+        Int(meta["nx"]),
+        Int(meta["ny"]),
+        Int(meta["leftcut"]),
+        Int(meta["rightcut"]),
+        Int(meta["topcut"]),
+        Float64(meta["R_JET"]),
+        crx,
+        cry,
+        vol,
+    )
 end
 
 """
@@ -64,5 +71,5 @@ Return `(; crx, cry, vol)` rescaled to major radius `R`: coordinates scale as
 """
 function scaled_geometry(geo::SOLPSGeometry, R::Real)
     s = R / geo.R_JET
-    return (crx=geo.crx .* s, cry=geo.cry .* s, vol=geo.vol .* s^3)
+    return (crx = geo.crx .* s, cry = geo.cry .* s, vol = geo.vol .* s^3)
 end

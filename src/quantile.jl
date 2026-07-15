@@ -27,7 +27,11 @@ const _INV_SQRT2 = 0.7071067811865476
 Linear interpolation of the value at `x` given ascending knots `xp` and values
 `yp`, clamped to `yp[1]`/`yp[end]` outside the `xp` range (matches `np.interp`).
 """
-@inline function _interp_clamped(x::Float64, xp::AbstractVector{Float64}, yp::AbstractVector{Float64})
+@inline function _interp_clamped(
+    x::Float64,
+    xp::AbstractVector{Float64},
+    yp::AbstractVector{Float64},
+)
     n = length(xp)
     @inbounds begin
         x <= xp[1] && return yp[1]

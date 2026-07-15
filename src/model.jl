@@ -12,8 +12,17 @@
 
 # species -> model-folder index (verbatim from upstream species_dict)
 const SPECIES_INDEX = Dict(
-    "D0" => 0, "D1" => 1, "N0" => 2, "N1" => 3, "N2" => 4,
-    "N3" => 5, "N4" => 6, "N5" => 7, "N6" => 8, "N7" => 9)
+    "D0" => 0,
+    "D1" => 1,
+    "N0" => 2,
+    "N1" => 3,
+    "N2" => 4,
+    "N3" => 5,
+    "N4" => 6,
+    "N5" => 7,
+    "N6" => 8,
+    "N7" => 9,
+)
 
 const SCALAR_ITEMS = ("pwmxap", "fnixap", "psol")
 const FIELD_ITEMS = ("te", "ti", "na", "ua", "rqrad")
@@ -76,7 +85,12 @@ automatically — converted from the upstream TensorFlow weights on first use
 (see [`resolve_dir`](@ref) / [`ensure_available`](@ref)). Disable auto-conversion
 with `ENV["$AUTOCONVERT_ENV"] = "0"`.
 """
-function load_model(item::AbstractString; species=nothing, dir=nothing, verify::Bool=false)
+function load_model(
+    item::AbstractString;
+    species = nothing,
+    dir = nothing,
+    verify::Bool = false,
+)
     d = resolve_dir(; dir)
     key = model_key(item, species)
     # Field items also need the shared geometry group (geometry.json sets the grid).
@@ -85,7 +99,8 @@ function load_model(item::AbstractString; species=nothing, dir=nothing, verify::
 
     X_mean = Float64.(vec(NPZ.npzread(joinpath(d, "X_mean.npy"))))
     X_std = Float64.(vec(NPZ.npzread(joinpath(d, "X_std.npy"))))
-    length(X_mean) == N_INPUTS || error("X_mean has $(length(X_mean)) entries, expected $N_INPUTS")
+    length(X_mean) == N_INPUTS ||
+        error("X_mean has $(length(X_mean)) entries, expected $N_INPUTS")
 
     references = Float64.(vec(NPZ.npzread(joinpath(d, key, "references.npy"))))
     quantiles = Float64.(NPZ.npzread(joinpath(d, key, "quantiles.npy")))
@@ -95,7 +110,7 @@ function load_model(item::AbstractString; species=nothing, dir=nothing, verify::
     sessions = ORT.InferenceSession[]
     in_keys = String[]
     out_keys = String[]
-    for k in 1:N_FOLDS
+    for k = 1:N_FOLDS
         s = ORT.load_inference(joinpath(d, key, "fold$k.onnx"))
         push!(sessions, s)
         push!(in_keys, only_name(ORT.input_names(s), "input", key, k))
@@ -114,12 +129,24 @@ function load_model(item::AbstractString; species=nothing, dir=nothing, verify::
             error("grid $(grid) (=$(prod(grid))) != quantile features $nfeat for '$key'")
     end
 
-    return SOLPSModel(String(item), species === nothing ? nothing : String(species),
-        key, is_scalar, grid, sessions, in_keys, out_keys, X_mean, X_std, qt)
+    return SOLPSModel(
+        String(item),
+        species === nothing ? nothing : String(species),
+        key,
+        is_scalar,
+        grid,
+        sessions,
+        in_keys,
+        out_keys,
+        X_mean,
+        X_std,
+        qt,
+    )
 end
 
 function only_name(names::AbstractVector, kind, key, k)
-    length(names) == 1 || error("fold$k of '$key' has $(length(names)) $kind tensors, expected 1")
+    length(names) == 1 ||
+        error("fold$k of '$key' has $(length(names)) $kind tensors, expected 1")
     return String(names[1])
 end
 
@@ -128,7 +155,7 @@ function normalize_inputs(m::SOLPSModel, X::AbstractMatrix{<:Real})
     size(X, 2) == N_INPUTS || error("expected (N,$N_INPUTS) input, got $(size(X))")
     N = size(X, 1)
     Xp = Matrix{Float64}(undef, N, N_INPUTS)
-    @inbounds for n in 1:N
+    @inbounds for n = 1:N
         Xp[n, 1] = X[n, 1]            # R
         Xp[n, 2] = X[n, 2]            # B
         Xp[n, 3] = X[n, 3] / 2.0      # P / 2
@@ -138,7 +165,7 @@ function normalize_inputs(m::SOLPSModel, X::AbstractMatrix{<:Real})
         Xp[n, 7] = X[n, 7]            # Dperp
         Xp[n, 8] = X[n, 8]            # chi_perp
     end
-    @inbounds for c in 1:N_INPUTS, n in 1:N
+    @inbounds for c = 1:N_INPUTS, n = 1:N
         Xp[n, c] = (Xp[n, c] - m.X_mean[c]) / m.X_std[c]
     end
     return Float32.(Xp)
@@ -156,9 +183,9 @@ function predict(m::SOLPSModel, X::AbstractMatrix{<:Real})
     N = size(Xn, 1)
     if m.is_scalar
         acc = zeros(Float64, N)
-        for k in 1:N_FOLDS
+        for k = 1:N_FOLDS
             raw = m.sessions[k](Dict(m.in_keys[k] => Xn))[m.out_keys[k]]  # (N,1)
-            @inbounds for n in 1:N
+            @inbounds for n = 1:N
                 acc[n] += inverse_transform_column(m.qt, raw[n, 1], 1)
             end
         end
@@ -167,9 +194,9 @@ function predict(m::SOLPSModel, X::AbstractMatrix{<:Real})
     else
         gx, gy = m.grid
         acc = zeros(Float64, N, gx, gy)
-        for k in 1:N_FOLDS
+        for k = 1:N_FOLDS
             raw = m.sessions[k](Dict(m.in_keys[k] => Xn))[m.out_keys[k]]  # (N,gx,gy)
-            @inbounds for n in 1:N, i in 1:gx, j in 1:gy
+            @inbounds for n = 1:N, i = 1:gx, j = 1:gy
                 col = (i - 1) * gy + j        # C-order flatten to match quantiles
                 acc[n, i, j] += inverse_transform_column(m.qt, raw[n, i, j], col)
             end
@@ -181,5 +208,5 @@ end
 
 function predict(m::SOLPSModel, x::AbstractVector{<:Real})
     out = predict(m, reshape(collect(x), 1, :))
-    return m.is_scalar ? out[1] : dropdims(out; dims=1)
+    return m.is_scalar ? out[1] : dropdims(out; dims = 1)
 end

@@ -19,12 +19,13 @@ measures by `s = R / R_JET` when both are given (lengths ∝ s, edge areas ∝ s
 cell volumes ∝ s³, and the toroidal node `measure = 2πr` ∝ s).
 """
 function SOLPSNN.build_edge_profiles_ggd_solps2imas!(
-    dd, b2gmtry::AbstractString;
-    R::Union{Nothing,Real}=nothing,
-    R_JET::Union{Nothing,Real}=nothing,
-    time0::Union{Nothing,Real}=nothing,
+    dd,
+    b2gmtry::AbstractString;
+    R::Union{Nothing,Real} = nothing,
+    R_JET::Union{Nothing,Real} = nothing,
+    time0::Union{Nothing,Real} = nothing,
 )
-    SOLPS2imas.solps2imas(b2gmtry; ids=dd)
+    SOLPS2imas.solps2imas(b2gmtry; ids = dd)
 
     slice = length(dd.edge_profiles.grid_ggd)
     g = dd.edge_profiles.grid_ggd[slice]

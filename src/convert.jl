@@ -45,7 +45,8 @@ end
 
 """Locate a conda-like executable (`conda`/`mamba`/`micromamba`), or `nothing`."""
 function find_conda()
-    for c in (get(ENV, CONDA_ENV, ""), get(ENV, "CONDA_EXE", ""), "conda", "mamba", "micromamba")
+    for c in
+        (get(ENV, CONDA_ENV, ""), get(ENV, "CONDA_EXE", ""), "conda", "mamba", "micromamba")
         isempty(c) && continue
         exe = Sys.which(c)
         exe !== nothing && return exe
@@ -63,7 +64,8 @@ function _convert_env_overrides()
     if scratch !== nothing
         ov["TMPDIR"] = get(ENV, "TMPDIR", joinpath(scratch, "tmp"))
         ov["PIP_CACHE_DIR"] = get(ENV, "PIP_CACHE_DIR", joinpath(scratch, ".cache", "pip"))
-        ov["CONDA_PKGS_DIRS"] = get(ENV, "CONDA_PKGS_DIRS", joinpath(scratch, ".conda", "pkgs"))
+        ov["CONDA_PKGS_DIRS"] =
+            get(ENV, "CONDA_PKGS_DIRS", joinpath(scratch, ".conda", "pkgs"))
     end
     for (k, v) in ov
         mkpath(v)
@@ -77,17 +79,23 @@ end
 Ensure the conda env at `prefix` exists with the conversion dependencies,
 creating it from `convert/requirements.txt` on first use (multi-GB, one-time).
 """
-function ensure_convert_env!(conda::AbstractString, prefix::AbstractString; verbose::Bool=true)
+function ensure_convert_env!(
+    conda::AbstractString,
+    prefix::AbstractString;
+    verbose::Bool = true,
+)
     convert_env_exists(prefix) && return prefix
     if !create_convert_env_enabled()
-        error("""
-            SOLPS-NN conversion env not found at:
-                $prefix
-            and creation is disabled ($CREATE_ENV_ENV=0). Create it manually:
-                $conda create -y --prefix $prefix python=3.10 pip
-                $conda run --prefix $prefix python -m pip install -r $(joinpath(convert_dir(), "requirements.txt"))
-            or set ENV["$CONVERT_ENV_ENV"] to an existing env.
-            """)
+        error(
+            """
+          SOLPS-NN conversion env not found at:
+              $prefix
+          and creation is disabled ($CREATE_ENV_ENV=0). Create it manually:
+              $conda create -y --prefix $prefix python=3.10 pip
+              $conda run --prefix $prefix python -m pip install -r $(joinpath(convert_dir(), "requirements.txt"))
+          or set ENV["$CONVERT_ENV_ENV"] to an existing env.
+          """,
+        )
     end
     req = joinpath(convert_dir(), "requirements.txt")
     verbose && @warn "SOLPSNN: creating conversion conda env (TensorFlow + tf2onnx). \
@@ -109,31 +117,49 @@ into `dir`. Auto-fetches the upstream TensorFlow weights and converts them; the
 conversion conda env is created if missing. Requires a conda-like executable on
 `PATH` (e.g. `module load conda` on NERSC, or the FUSE conda env).
 """
-function convert_models!(items::AbstractVector{<:AbstractString};
-        dir::Union{Nothing,AbstractString}=nothing,
-        raw_dir::Union{Nothing,AbstractString}=nothing,
-        validate::Bool=false, verbose::Bool=true)
+function convert_models!(
+    items::AbstractVector{<:AbstractString};
+    dir::Union{Nothing,AbstractString} = nothing,
+    raw_dir::Union{Nothing,AbstractString} = nothing,
+    validate::Bool = false,
+    verbose::Bool = true,
+)
     d = resolve_dir(; dir)
     conda = find_conda()
     conda === nothing && error(
         "SOLPSNN: no conda/mamba/micromamba on PATH. Run `module load conda` (NERSC) or " *
         "activate the FUSE conda env, set ENV[\"$CONDA_ENV\"], or point ENV[\"$ENV_DIR\"] at " *
-        "an already-converted artifact dir.")
+        "an already-converted artifact dir.",
+    )
     prefix = convert_env_prefix()
     ensure_convert_env!(conda, prefix; verbose)
 
-    raw = raw_dir !== nothing ? String(raw_dir) :
-          get(ENV, RAW_DIR_ENV, normpath(joinpath(d, "..", "solps-nn-data")))
+    raw =
+        raw_dir !== nothing ? String(raw_dir) :
+        get(ENV, RAW_DIR_ENV, normpath(joinpath(d, "..", "solps-nn-data")))
     run_sh = joinpath(convert_dir(), "run.sh")
     isfile(run_sh) || error("SOLPSNN: conversion script not found at $run_sh")
     mkpath(d)
     mkpath(raw)
 
-    overrides = merge(_convert_env_overrides(), Dict(
-        "CONVERT_ENV" => prefix, "RAW_DIR" => raw, "OUT_DIR" => d,
-        "BASE_URL" => "", "VALIDATE" => validate ? "1" : "0",
-        "PATH" => string(dirname(conda), Sys.iswindows() ? ";" : ":", get(ENV, "PATH", ""))))
-    verbose && @info "SOLPSNN: converting $(collect(items)) via $run_sh" out_dir = d raw_dir = raw env = prefix
+    overrides = merge(
+        _convert_env_overrides(),
+        Dict(
+            "CONVERT_ENV" => prefix,
+            "RAW_DIR" => raw,
+            "OUT_DIR" => d,
+            "BASE_URL" => "",
+            "VALIDATE" => validate ? "1" : "0",
+            "PATH" => string(
+                dirname(conda),
+                Sys.iswindows() ? ";" : ":",
+                get(ENV, "PATH", ""),
+            ),
+        ),
+    )
+    verbose &&
+        @info "SOLPSNN: converting $(collect(items)) via $run_sh" out_dir = d raw_dir = raw env =
+            prefix
     withenv(overrides...) do
         run(`bash $run_sh $(collect(String, items))`)
     end
@@ -150,15 +176,17 @@ scaler, geometry, and manifest). Honors `ENV["$AUTOCONVERT_ENV"]`.
 """
 function convert_groups!(dir::AbstractString, groups::AbstractVector{<:AbstractString})
     if !autoconvert_enabled()
-        error("""
-            SOLPS-NN ONNX artifacts are missing under:
-                $dir
-            (missing groups: $(collect(groups))) and auto-conversion is disabled
-            ($AUTOCONVERT_ENV=0). Options:
-              * run  SOLPSNN.convert_models!($(repr(_items_for(groups))); dir="$dir")
-              * run  $(joinpath(convert_dir(), "run.sh"))  yourself, then set ENV["$ENV_DIR"]
-              * point ENV["$ENV_DIR"] at an already-converted directory
-            """)
+        error(
+            """
+          SOLPS-NN ONNX artifacts are missing under:
+              $dir
+          (missing groups: $(collect(groups))) and auto-conversion is disabled
+          ($AUTOCONVERT_ENV=0). Options:
+            * run  SOLPSNN.convert_models!($(repr(_items_for(groups))); dir="$dir")
+            * run  $(joinpath(convert_dir(), "run.sh"))  yourself, then set ENV["$ENV_DIR"]
+            * point ENV["$ENV_DIR"] at an already-converted directory
+          """,
+        )
     end
     items = _items_for(groups)
     if isempty(items)
@@ -168,7 +196,8 @@ function convert_groups!(dir::AbstractString, groups::AbstractVector{<:AbstractS
     end
     convert_models!(items; dir)
     still = String[g for g in groups if !group_complete(dir, g)]
-    isempty(still) || error("SOLPSNN: conversion completed but groups still missing: $still")
+    isempty(still) ||
+        error("SOLPSNN: conversion completed but groups still missing: $still")
     return dir
 end
 

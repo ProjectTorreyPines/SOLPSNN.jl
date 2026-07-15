@@ -24,22 +24,31 @@ end
 
 # Build a SOLPSModel with no ONNX sessions, for testing the pure-Julia
 # pre/post-processing kernels in isolation (no artifacts needed).
-function stub_model(; X_mean, X_std, qt, is_scalar=false, grid=(3, 3))
+function stub_model(; X_mean, X_std, qt, is_scalar = false, grid = (3, 3))
     return SOLPSNN.SOLPSModel(
-        "stub", nothing, "stub", is_scalar, grid,
-        Vector{SOLPSNN.ORT.InferenceSession}(), String[], String[],
-        Float64.(X_mean), Float64.(X_std), qt)
+        "stub",
+        nothing,
+        "stub",
+        is_scalar,
+        grid,
+        Vector{SOLPSNN.ORT.InferenceSession}(),
+        String[],
+        String[],
+        Float64.(X_mean),
+        Float64.(X_std),
+        qt,
+    )
 end
 
 # Synthetic B2 geometry on a regular integer lattice: cell (ix,iy) spans
 # [ix-1,ix] x [iy-1,iy], so corners dedup to exactly (nx+1)*(ny+1) nodes.
 # crx corner order matches upstream (LL, LR, UL, UR) = indices (1,2,3,4).
-function synthetic_geometry(nx::Int, ny::Int; R_JET::Float64=3.0)
+function synthetic_geometry(nx::Int, ny::Int; R_JET::Float64 = 3.0)
     nX, nY = nx + 2, ny + 2
     crx = Array{Float64,3}(undef, nX, nY, 4)
     cry = Array{Float64,3}(undef, nX, nY, 4)
     vol = Array{Float64,2}(undef, nX, nY)
-    for ix in 1:nX, iy in 1:nY
+    for ix = 1:nX, iy = 1:nY
         x0, x1 = ix - 1.0, Float64(ix)
         y0, y1 = iy - 1.0, Float64(iy)
         crx[ix, iy, :] .= (x0, x1, x0, x1)   # LL, LR, UL, UR
@@ -64,11 +73,11 @@ end
     @testset "quantile inverse (unit)" begin
         # Identity-ish check: references = linspace(0,1,N), quantiles column = same
         # grid mapped to a known monotone function; Φ(0)=0.5 must land mid-table.
-        refs = collect(range(0.0, 1.0; length=101))
-        qcol = collect(range(-3.0, 3.0; length=101))       # values
+        refs = collect(range(0.0, 1.0; length = 101))
+        qcol = collect(range(-3.0, 3.0; length = 101))       # values
         qt = SOLPSNN.QuantileTransformer(refs, reshape(qcol, :, 1))
         # y=0 -> Φ=0.5 -> interp at 0.5 -> value 0.0
-        @test isapprox(SOLPSNN.inverse_transform_column(qt, 0.0, 1), 0.0; atol=1e-9)
+        @test isapprox(SOLPSNN.inverse_transform_column(qt, 0.0, 1), 0.0; atol = 1e-9)
         # monotonicity: larger latent -> larger physical value
         @test SOLPSNN.inverse_transform_column(qt, 1.0, 1) >
               SOLPSNN.inverse_transform_column(qt, -1.0, 1)
@@ -78,9 +87,9 @@ end
     end
 
     @testset "normal CDF" begin
-        @test isapprox(SOLPSNN._normcdf(0.0), 0.5; atol=1e-12)
-        @test isapprox(SOLPSNN._normcdf(1.96), 0.975; atol=1e-3)
-        @test isapprox(SOLPSNN._normcdf(-1.96), 0.025; atol=1e-3)
+        @test isapprox(SOLPSNN._normcdf(0.0), 0.5; atol = 1e-12)
+        @test isapprox(SOLPSNN._normcdf(1.96), 0.975; atol = 1e-3)
+        @test isapprox(SOLPSNN._normcdf(-1.96), 0.025; atol = 1e-3)
     end
 
     # ------------------------------------------------------------------ #
@@ -92,17 +101,17 @@ end
         X = [6.2 5.3 1.0e8 1.0e22 1.0e20 9.1e21 0.3 1.0]
 
         # identity scaler -> exposes the raw transform (P/2, log10 of puff/fuel)
-        m = stub_model(; X_mean=zeros(8), X_std=ones(8), qt)
+        m = stub_model(; X_mean = zeros(8), X_std = ones(8), qt)
         Xn = SOLPSNN.normalize_inputs(m, X)
         @test size(Xn) == (1, 8)
         @test eltype(Xn) == Float32
         expected = Float32[6.2, 5.3, 5.0e7, 22.0, 20.0, log10(9.1e21), 0.3, 1.0]
-        @test isapprox(vec(Xn), expected; rtol=1.0f-6)
+        @test isapprox(vec(Xn), expected; rtol = 1.0f-6)
 
         # affine scaler -> standardization applied after the raw transform
-        m2 = stub_model(; X_mean=fill(1.0, 8), X_std=fill(2.0, 8), qt)
+        m2 = stub_model(; X_mean = fill(1.0, 8), X_std = fill(2.0, 8), qt)
         Xn2 = SOLPSNN.normalize_inputs(m2, X)
-        @test isapprox(vec(Xn2), (expected .- 1.0f0) ./ 2.0f0; rtol=1.0f-6)
+        @test isapprox(vec(Xn2), (expected .- 1.0f0) ./ 2.0f0; rtol = 1.0f-6)
 
         # batch handling: two identical rows -> identical normalized rows
         Xb = vcat(X, X)
@@ -113,9 +122,11 @@ end
     @testset "regression: quantile inverse golden values" begin
         # references (CDF grid) -> quantile values (physical). Two features.
         refs = [0.0, 0.5, 1.0]
-        quants = [10.0 100.0
-                  20.0 200.0
-                  40.0 400.0]
+        quants = [
+            10.0 100.0
+            20.0 200.0
+            40.0 400.0
+        ]
         qt = SOLPSNN.QuantileTransformer(refs, quants)
         @test SOLPSNN.nfeatures(qt) == 2
 
@@ -123,19 +134,19 @@ end
         z75 = 0.6744897501960817    # Φ⁻¹(0.75)
 
         # column 1: y=0 -> p=0.5 -> node value 20; p=0.25 -> 15; p=0.75 -> 30
-        @test isapprox(SOLPSNN.inverse_transform_column(qt, 0.0, 1), 20.0; atol=1e-9)
-        @test isapprox(SOLPSNN.inverse_transform_column(qt, z25, 1), 15.0; atol=1e-6)
-        @test isapprox(SOLPSNN.inverse_transform_column(qt, z75, 1), 30.0; atol=1e-6)
+        @test isapprox(SOLPSNN.inverse_transform_column(qt, 0.0, 1), 20.0; atol = 1e-9)
+        @test isapprox(SOLPSNN.inverse_transform_column(qt, z25, 1), 15.0; atol = 1e-6)
+        @test isapprox(SOLPSNN.inverse_transform_column(qt, z75, 1), 30.0; atol = 1e-6)
         # column 2 uses its own quantile column (indexing correctness)
-        @test isapprox(SOLPSNN.inverse_transform_column(qt, 0.0, 2), 200.0; atol=1e-9)
-        @test isapprox(SOLPSNN.inverse_transform_column(qt, z25, 2), 150.0; atol=1e-5)
+        @test isapprox(SOLPSNN.inverse_transform_column(qt, 0.0, 2), 200.0; atol = 1e-9)
+        @test isapprox(SOLPSNN.inverse_transform_column(qt, z25, 2), 150.0; atol = 1e-5)
         # clamping at the table extremes
         @test SOLPSNN.inverse_transform_column(qt, 40.0, 1) == 40.0
         @test SOLPSNN.inverse_transform_column(qt, -40.0, 2) == 100.0
     end
 
     @testset "regression: synthetic geometry + GGD (no artifacts)" begin
-        geo = synthetic_geometry(2, 3; R_JET=3.0)
+        geo = synthetic_geometry(2, 3; R_JET = 3.0)
         nX, nY = SOLPSNN.grid_size(geo)
         @test (nX, nY) == (4, 5)
 
@@ -145,7 +156,7 @@ end
         @test isapprox(sc.vol, geo.vol .* 8)
 
         dd = IMAS.dd()
-        gi = SOLPSNN.build_edge_profiles_ggd!(dd, geo; R=3.0, time0=0.0)  # s=1, no scaling
+        gi = SOLPSNN.build_edge_profiles_ggd!(dd, geo; R = 3.0, time0 = 0.0)  # s=1, no scaling
         @test gi == 1
         g = dd.edge_profiles.grid_ggd[1]
         faces = g.space[1].objects_per_dimension[3].object
@@ -161,13 +172,13 @@ end
         end
 
         # field flattening matches the cell ordering
-        field = reshape(collect(1.0:(nX * nY)), nX, nY)
+        field = reshape(collect(1.0:(nX*nY)), nX, nY)
         ep = SOLPSNN.ggd_time_slice!(dd, 0.0)
-        e = SOLPSNN.add_ggd_field!(ep.electrons.temperature, field; grid_index=gi)
+        e = SOLPSNN.add_ggd_field!(ep.electrons.temperature, field; grid_index = gi)
         @test length(e.values) == nX * nY
         @test e.grid_index == 1 && e.grid_subset_index == 5
         for (ix, iy) in ((1, 1), (2, 4), (nX, nY))
-            @test e.values[(ix - 1) * nY + iy] == field[ix, iy]
+            @test e.values[(ix-1)*nY+iy] == field[ix, iy]
         end
     end
 
@@ -207,8 +218,12 @@ end
         # expected on-disk file lists (must track convert/run.sh output)
         @test SOLPSNN.group_files("root") == ["X_mean.npy", "X_std.npy"]
         geo = SOLPSNN.group_files("geometry")
-        @test Set(geo) == Set(["geometry/crx.npy", "geometry/cry.npy",
-            "geometry/vol.npy", "geometry/geometry.json"])
+        @test Set(geo) == Set([
+            "geometry/crx.npy",
+            "geometry/cry.npy",
+            "geometry/vol.npy",
+            "geometry/geometry.json",
+        ])
         te = SOLPSNN.group_files("te")
         @test te[1:2] == ["te/references.npy", "te/quantiles.npy"]
         @test length(te) == 2 + SOLPSNN.N_FOLDS
@@ -286,9 +301,9 @@ end
 
     @testset "regression: resolve_dir precedence (no fetch)" begin
         # explicit dir always wins
-        @test SOLPSNN.resolve_dir(; dir="/explicit/path") == "/explicit/path"
+        @test SOLPSNN.resolve_dir(; dir = "/explicit/path") == "/explicit/path"
         withenv("FUSE_SOLPS_NN_DIR" => "/env/dir", "PSCRATCH" => "/scr") do
-            @test SOLPSNN.resolve_dir(; dir="/explicit/path") == "/explicit/path"
+            @test SOLPSNN.resolve_dir(; dir = "/explicit/path") == "/explicit/path"
             @test SOLPSNN.resolve_dir() == "/env/dir"
         end
         # no explicit ENV -> $PSCRATCH/solps-nn-onnx
@@ -329,7 +344,8 @@ end
             @test SOLPSNN.convert_env_prefix() == "/custom/env"
         end
         withenv("FUSE_SOLPS_NN_CONVERT_ENV" => nothing, "PSCRATCH" => "/scr") do
-            @test SOLPSNN.convert_env_prefix() == joinpath("/scr", ".conda", "envs", "solpsnn-convert")
+            @test SOLPSNN.convert_env_prefix() ==
+                  joinpath("/scr", ".conda", "envs", "solpsnn-convert")
         end
 
         # convert_env_exists detects a python-bearing prefix
@@ -354,7 +370,13 @@ end
             @test Base.get_extension(SOLPSNN, :SOLPS2imasExt) !== nothing
 
             dd = IMAS.dd()
-            gi = SOLPSNN.build_edge_profiles_ggd_solps2imas!(dd, b2; R=6.2, R_JET=3.0, time0=0.0)
+            gi = SOLPSNN.build_edge_profiles_ggd_solps2imas!(
+                dd,
+                b2;
+                R = 6.2,
+                R_JET = 3.0,
+                time0 = 0.0,
+            )
             g = dd.edge_profiles.grid_ggd[end]
             sp = g.space[1]
             cells = sp.objects_per_dimension[3].object
@@ -377,17 +399,22 @@ end
             dd0 = IMAS.dd()
             SOLPSNN.build_edge_profiles_ggd_solps2imas!(dd0, b2)
             n0 = dd0.edge_profiles.grid_ggd[end].space[1].objects_per_dimension[1].object
-            @test isapprox(nodes[7].geometry, n0[7].geometry .* (6.2 / 3.0); rtol=1e-9)
+            @test isapprox(nodes[7].geometry, n0[7].geometry .* (6.2 / 3.0); rtol = 1e-9)
 
             # :solps cell ordering ic=(iy-1)*nX+ix  ==>  flatten is vec(field)
             ep = SOLPSNN.ggd_time_slice!(dd, 0.0)
             field = reshape(collect(1.0:ncell), nX, nY)
-            e = SOLPSNN.add_ggd_field!(ep.electrons.temperature, field;
-                                       grid_index=gi, subset_index=5, order=:solps)
+            e = SOLPSNN.add_ggd_field!(
+                ep.electrons.temperature,
+                field;
+                grid_index = gi,
+                subset_index = 5,
+                order = :solps,
+            )
             @test e.grid_index == gi && e.grid_subset_index == 5
             @test e.values == vec(field)
             for (ix, iy) in ((1, 1), (3, 4), (nX, nY))
-                @test e.values[(iy - 1) * nX + ix] == field[ix, iy]
+                @test e.values[(iy-1)*nX+ix] == field[ix, iy]
             end
         end
     end
@@ -419,7 +446,7 @@ end
             geo = SOLPSNN.load_geometry(dir)
             nX, nY = SOLPSNN.grid_size(geo)
             dd = IMAS.dd()
-            gi = SOLPSNN.build_edge_profiles_ggd!(dd, geo; R=6.2, time0=0.0)
+            gi = SOLPSNN.build_edge_profiles_ggd!(dd, geo; R = 6.2, time0 = 0.0)
             @test gi == 1
             g = dd.edge_profiles.grid_ggd[1]
             @test g.time == 0.0
@@ -433,14 +460,14 @@ end
             @test g.grid_subset[1].dimension == 3
 
             # field/value alignment: c = (ix-1)*nY + iy
-            field = reshape(collect(1.0:(nX * nY)), nX, nY)
+            field = reshape(collect(1.0:(nX*nY)), nX, nY)
             ep = SOLPSNN.ggd_time_slice!(dd, 0.0)
-            e = SOLPSNN.add_ggd_field!(ep.electrons.temperature, field; grid_index=gi)
+            e = SOLPSNN.add_ggd_field!(ep.electrons.temperature, field; grid_index = gi)
             @test length(e.values) == nX * nY
             @test e.grid_index == 1
             @test e.grid_subset_index == 5
             for (ix, iy) in ((1, 1), (3, 4), (nX, nY))
-                @test e.values[(ix - 1) * nY + iy] == field[ix, iy]
+                @test e.values[(ix-1)*nY+iy] == field[ix, iy]
             end
         end
 
@@ -454,18 +481,18 @@ end
                 ref = NPZ.npzread(reffile)
                 sp = startswith(item, "na") ? "D1" : nothing
                 it = startswith(item, "na") ? "na" : item
-                model = SOLPSNN.load_model(it; species=sp, dir=dir)
+                model = SOLPSNN.load_model(it; species = sp, dir = dir)
                 got = SOLPSNN.predict(model, X)
                 @test size(got) == size(ref)
                 # relative match with a small floor for clamped near-zero cells
-                @test isapprox(got, ref; rtol=1e-3, atol=1e-3 * maximum(abs, ref))
+                @test isapprox(got, ref; rtol = 1e-3, atol = 1e-3 * maximum(abs, ref))
             end
 
             @testset "vector input convenience" begin
                 geo = SOLPSNN.load_geometry(dir)
-                q = SOLPSNN.load_model("pwmxap"; dir=dir)
+                q = SOLPSNN.load_model("pwmxap"; dir = dir)
                 @test SOLPSNN.predict(q, X[1, :]) isa Real
-                te = SOLPSNN.load_model("te"; dir=dir)
+                te = SOLPSNN.load_model("te"; dir = dir)
                 f = SOLPSNN.predict(te, X[1, :])
                 @test size(f) == (geo.nx + 2, geo.ny + 2)
             end

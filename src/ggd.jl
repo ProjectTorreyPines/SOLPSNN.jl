@@ -34,8 +34,13 @@ Populate a new `dd.edge_profiles.grid_ggd` slice with the SOLPS B2 grid scaled
 to major radius `R`. Returns the 1-based `grid_index` (position in
 `dd.edge_profiles.grid_ggd`) to be referenced by field entries.
 """
-function build_edge_profiles_ggd!(dd::IMASdd.dd, geo::SOLPSGeometry; R::Real,
-                                  time0::Float64=dd.global_time, grid_name::AbstractString="SOLPS-NN b2")
+function build_edge_profiles_ggd!(
+    dd::IMASdd.dd,
+    geo::SOLPSGeometry;
+    R::Real,
+    time0::Float64 = dd.global_time,
+    grid_name::AbstractString = "SOLPS-NN b2",
+)
     sc = scaled_geometry(geo, R)
     crx, cry, vol = sc.crx, sc.cry, sc.vol
     nX, nY = size(vol)              # (nx+2, ny+2)
@@ -62,7 +67,7 @@ function build_edge_profiles_ggd!(dd::IMASdd.dd, geo::SOLPSGeometry; R::Real,
     nodes_opd.geometry_content.index = 1          # node coordinates
 
     # ---- nodes (deduplicated corners) ----
-    node_key(r, z) = (round(r; digits=8), round(z; digits=8))
+    node_key(r, z) = (round(r; digits = 8), round(z; digits = 8))
     node_ids = Dict{Tuple{Float64,Float64},Int}()
     node_coords = Vector{Tuple{Float64,Float64}}()
     function node_id!(r, z)
@@ -78,7 +83,7 @@ function build_edge_profiles_ggd!(dd::IMASdd.dd, geo::SOLPSGeometry; R::Real,
     ncells = nX * nY
     cell_nodes = Vector{NTuple{4,Int}}(undef, ncells)
     cell_measure = Vector{Float64}(undef, ncells)
-    @inbounds for ix in 1:nX, iy in 1:nY
+    @inbounds for ix = 1:nX, iy = 1:nY
         c = (ix - 1) * nY + iy
         n = ntuple(4) do t
             corner = _CORNER_CCW[t]
@@ -95,7 +100,7 @@ function build_edge_profiles_ggd!(dd::IMASdd.dd, geo::SOLPSGeometry; R::Real,
 
     faces_opd.geometry_content.index = 31   # (ix, iy, volume)
     resize!(faces_opd.object, ncells)
-    @inbounds for ix in 1:nX, iy in 1:nY
+    @inbounds for ix = 1:nX, iy = 1:nY
         c = (ix - 1) * nY + iy
         obj = faces_opd.object[c]
         obj.nodes = collect(cell_nodes[c])
@@ -119,7 +124,8 @@ end
 
 Return (creating if needed) the `dd.edge_profiles.ggd` element at `time0`.
 """
-ggd_time_slice!(dd::IMASdd.dd, time0::Float64=dd.global_time) = resize!(dd.edge_profiles.ggd, time0)
+ggd_time_slice!(dd::IMASdd.dd, time0::Float64 = dd.global_time) =
+    resize!(dd.edge_profiles.ggd, time0)
 
 """Flatten to SOLPS2imas cell ordering `ic=(iy-1)*nx+ix` (poloidal `ix` fastest)."""
 _flatten_cells_solps(field::AbstractMatrix) = vec(field)
@@ -138,8 +144,13 @@ attached to:
 - `:solps`  — a grid built by `SOLPS2imas.solps2imas`, `ic=(iy-1)*nx+ix`
   (poloidal `ix` fastest).
 """
-function add_ggd_field!(field_vec, field2D::AbstractMatrix; grid_index::Integer,
-                        subset_index::Integer=CELLS_SUBSET, order::Symbol=:native)
+function add_ggd_field!(
+    field_vec,
+    field2D::AbstractMatrix;
+    grid_index::Integer,
+    subset_index::Integer = CELLS_SUBSET,
+    order::Symbol = :native,
+)
     resize!(field_vec, 1)
     e = field_vec[1]
     e.grid_index = grid_index

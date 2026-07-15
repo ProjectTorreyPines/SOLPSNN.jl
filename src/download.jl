@@ -32,7 +32,7 @@ an explicit `dir`, then `ENV["$ENV_DIR"]`, then `\$PSCRATCH/solps-nn-onnx`, then
 the Julia depot (always writable; lands on `\$PSCRATCH` when `JULIA_DEPOT_PATH`
 is configured there).
 """
-function resolve_dir(; dir::Union{Nothing,AbstractString}=nothing)
+function resolve_dir(; dir::Union{Nothing,AbstractString} = nothing)
     dir !== nothing && return String(dir)
     haskey(ENV, ENV_DIR) && return ENV[ENV_DIR]
     if haskey(ENV, "PSCRATCH")
@@ -44,9 +44,13 @@ end
 # ── Expected on-disk layout (matches convert/run.sh output) ─────────────────
 
 _root_files() = ["X_mean.npy", "X_std.npy"]
-_geometry_files() = ["geometry/crx.npy", "geometry/cry.npy", "geometry/vol.npy", "geometry/geometry.json"]
-_item_files(key) = String["$key/references.npy", "$key/quantiles.npy",
-    ("$key/fold$k.onnx" for k in 1:N_FOLDS)...]
+_geometry_files() =
+    ["geometry/crx.npy", "geometry/cry.npy", "geometry/vol.npy", "geometry/geometry.json"]
+_item_files(key) = String[
+    "$key/references.npy",
+    "$key/quantiles.npy",
+    ("$key/fold$k.onnx" for k = 1:N_FOLDS)...,
+]
 
 """Relative paths expected for manifest group `g` (`root`, `geometry`, or an item key)."""
 function group_files(g::AbstractString)
@@ -76,7 +80,11 @@ verified against the local `manifest.json`). Otherwise the missing groups are
 produced by running the local `convert/` pipeline ([`convert_groups!`](@ref)),
 which fetches the upstream TensorFlow weights and converts them to ONNX.
 """
-function ensure_available(dir::AbstractString, groups::AbstractVector{<:AbstractString}; verify::Bool=false)
+function ensure_available(
+    dir::AbstractString,
+    groups::AbstractVector{<:AbstractString};
+    verify::Bool = false,
+)
     incomplete = String[g for g in groups if !group_complete(dir, g)]
     if isempty(incomplete)
         verify && _verify_local(dir, groups)
