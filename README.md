@@ -12,7 +12,8 @@ quantity is an **ensemble of 5 folds** (prediction = mean).
 This package runs the networks via [`ONNXRunTime.jl`](https://github.com/jw3126/ONNXRunTime.jl)
 and reproduces the upstream pre-processing and sklearn `QuantileTransformer`
 inverse in pure Julia. The original TensorFlow/Keras weights are converted to
-ONNX offline by the tooling in [`convert/`](convert/README.md).
+ONNX by the tooling in [`convert/`](convert/README.md), run automatically on
+first use (see [Model artifacts](#model-artifacts)).
 
 ## Inputs
 
@@ -36,17 +37,33 @@ Trained ranges (extrapolation not recommended): `R` 1–10 m, `B` 1–10 T,
 
 ## Model artifacts
 
-The ONNX weights (~1.3 GB for the headline set) live **outside git**. Produce
-them once with the conversion pipeline, then point the package at them:
+The ONNX weights (~1.3 GB for the headline set) live **outside git**. Upstream
+ships only TensorFlow SavedModels (on SURFdrive), which are the single ground
+truth — there is no ONNX mirror. The first `load_model(...)` for a quantity
+**produces the ONNX automatically**: it runs the [`convert/`](convert/README.md)
+pipeline, which fetches that quantity's weights from SURFdrive and converts them
+to ONNX (`tf2onnx`) in a conda env created on demand. This needs `conda` on
+`PATH` (e.g. `module load conda` on NERSC, or the FUSE conda env). A new upstream
+TensorFlow release is picked up by re-converting (delete the cache dir or call
+`convert_models!(...)`).
+
+```julia
+using SOLPSNN
+convert_models!(["all"])         # optional: pre-build every quantity up front
+```
+
+Or run the pipeline directly and point the package at the output:
 
 ```bash
-cd convert && ./run.sh            # downloads + converts te, ti, na1, pwmxap, psol
+cd convert && ./run.sh           # downloads + converts te, ti, na1, pwmxap, psol
 export FUSE_SOLPS_NN_DIR=$PSCRATCH/solps-nn-onnx
 ```
 
 Resolution order for the artifact directory: explicit `dir=` argument →
-`ENV["FUSE_SOLPS_NN_DIR"]` → `$PSCRATCH/solps-nn-onnx`. If `manifest.json`
-carries a `base_url`, missing files are fetched and SHA-256 verified on demand.
+`ENV["FUSE_SOLPS_NN_DIR"]` → `$PSCRATCH/solps-nn-onnx` → a `Scratch.jl` scratch
+space under the Julia depot (always writable, so `$PSCRATCH` is optional).
+Disable auto-conversion with `ENV["FUSE_SOLPS_NN_AUTOCONVERT"] = "0"` to fail
+fast on missing artifacts instead.
 
 ## Usage
 
@@ -86,6 +103,29 @@ add_ggd_field!(ep.electrons.density,     predict(ne, vec(X)); grid_index=gi)
 
 The grid uses the standard GGD "cells" subset (`identifier.index = 5`,
 `dimension = 3`); field values are flattened in cell order `c=(ix-1)*(ny+2)+iy`.
+
+### SOLPS2imas-backed grid
+
+For interoperability with [`GGDUtils`](https://github.com/ProjectTorreyPines/GGDUtils.jl)
+/ [`SOLPS2ctrl`](https://github.com/ProjectTorreyPines/SOLPS2ctrl.jl) tooling,
+the grid can instead be built through [`SOLPS2imas.jl`](https://github.com/ProjectTorreyPines/SOLPS2imas.jl),
+reproducing the exact mesh and full set of physical grid subsets (separatrix,
+inner/outer target, OMP/IMP, core/SOL, …) of a real SOLPS run. This is provided
+by the `SOLPS2imasExt` package extension, active once `SOLPS2imas` is loaded:
+
+```julia
+using SOLPSNN
+import SOLPS2imas                        # activates SOLPS2imasExt
+
+dd = IMASdd.dd()
+gi = build_edge_profiles_ggd_solps2imas!(dd, bundled_b2fgmtry(); R=6.2, R_JET=R_JET, time0=0.0)
+ep = ggd_time_slice!(dd, 0.0)
+add_ggd_field!(ep.electrons.temperature, predict(te, X); grid_index=gi, order=:solps)
+```
+
+`bundled_b2fgmtry()` returns the `b2fgmtry` grid file shipped inside the package,
+so no external geometry files are needed. Note the SOLPS2imas grid uses the
+transposed cell order, hence `order=:solps` when writing fields.
 
 ## Testing
 
