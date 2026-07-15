@@ -171,6 +171,176 @@ end
         end
     end
 
+    # ------------------------------------------------------------------ #
+    # Artifact-plumbing regression tests. These lock in the directory     #
+    # resolution, on-disk layout, manifest verification, model-key        #
+    # routing and convert-helper behavior WITHOUT ever fetching or         #
+    # converting the (out-of-git, multi-GB) weights. Auto-conversion is    #
+    # disabled at the top of this file, so the "missing" paths must fail   #
+    # fast rather than hit the network.                                    #
+    # ------------------------------------------------------------------ #
+    @testset "regression: model_key routing (no fetch)" begin
+        @test SOLPSNN.model_key("te", nothing) == "te"
+        @test SOLPSNN.model_key("ti", nothing) == "ti"
+        # scalar heads ignore species and route to themselves
+        for it in SOLPSNN.SCALAR_ITEMS
+            @test SOLPSNN.model_key(it, nothing) == it
+            @test SOLPSNN.model_key(it, "D1") == it
+        end
+        # species fields append the upstream species index (D0=0 … N7=9)
+        @test SOLPSNN.model_key("na", "D0") == "na0"
+        @test SOLPSNN.model_key("na", "D1") == "na1"
+        @test SOLPSNN.model_key("na", "N7") == "na9"
+        @test SOLPSNN.model_key("ua", "N0") == "ua2"
+        @test SOLPSNN.model_key("rqrad", "N7") == "rqrad9"
+        # every registered species round-trips through the index table
+        for (sp, idx) in SOLPSNN.SPECIES_INDEX
+            @test SOLPSNN.model_key("na", sp) == "na$idx"
+        end
+        # error cases
+        @test_throws Exception SOLPSNN.model_key("na", nothing)
+        @test_throws Exception SOLPSNN.model_key("na", "Z9")
+        @test_throws Exception SOLPSNN.model_key("bogus", nothing)
+    end
+
+    @testset "regression: artifact layout + completeness (no fetch)" begin
+        # expected on-disk file lists (must track convert/run.sh output)
+        @test SOLPSNN.group_files("root") == ["X_mean.npy", "X_std.npy"]
+        geo = SOLPSNN.group_files("geometry")
+        @test Set(geo) == Set(["geometry/crx.npy", "geometry/cry.npy",
+            "geometry/vol.npy", "geometry/geometry.json"])
+        te = SOLPSNN.group_files("te")
+        @test te[1:2] == ["te/references.npy", "te/quantiles.npy"]
+        @test length(te) == 2 + SOLPSNN.N_FOLDS
+        @test all(f -> occursin(r"^te/fold\d+\.onnx$", f), te[3:end])
+
+        mktempdir() do dir
+            # nothing present yet
+            @test !SOLPSNN.group_complete(dir, "root")
+            @test !SOLPSNN.group_complete(dir, "te")
+
+            # materialize a complete `root` + a fake item group as empty files
+            for f in SOLPSNN.group_files("root")
+                p = joinpath(dir, f)
+                mkpath(dirname(p))
+                write(p, "")
+            end
+            for f in SOLPSNN.group_files("faketest")
+                p = joinpath(dir, f)
+                mkpath(dirname(p))
+                write(p, "")
+            end
+            @test SOLPSNN.group_complete(dir, "root")
+            @test SOLPSNN.group_complete(dir, "faketest")
+
+            # all groups present -> ensure_available is a pure no-op (no convert)
+            @test SOLPSNN.ensure_available(dir, ["root", "faketest"]) == dir
+
+            # drop one file -> group is incomplete and (autoconvert off) fails fast
+            rm(joinpath(dir, "faketest", "fold1.onnx"))
+            @test !SOLPSNN.group_complete(dir, "faketest")
+            @test_throws Exception SOLPSNN.ensure_available(dir, ["faketest"])
+        end
+    end
+
+    @testset "regression: manifest SHA verification (no fetch)" begin
+        mktempdir() do dir
+            rel = "faketest/references.npy"
+            p = joinpath(dir, rel)
+            mkpath(dirname(p))
+            write(p, "hello solps")
+            sha = SOLPSNN._sha256(p)
+            manifest = "{\"items\":{\"faketest\":[{\"path\":\"$rel\",\"sha256\":\"$sha\"}]}}"
+            write(joinpath(dir, "manifest.json"), manifest)
+
+            # correct digest -> verification passes (returns the dir)
+            @test SOLPSNN._verify_local(dir, ["faketest"]) == dir
+
+            # groups absent from the manifest are silently skipped
+            @test SOLPSNN._verify_local(dir, ["not-in-manifest"]) == dir
+
+            # tampered file -> SHA mismatch is caught
+            write(p, "tampered")
+            @test_throws ErrorException SOLPSNN._verify_local(dir, ["faketest"])
+
+            # no manifest at all -> best-effort no-op (returns the dir)
+            mktempdir() do empty
+                @test SOLPSNN._verify_local(empty, ["faketest"]) == empty
+            end
+        end
+    end
+
+    @testset "regression: fail-fast when auto-conversion disabled" begin
+        # AUTOCONVERT is "0" (set at top); a missing quantity must error locally
+        # with actionable guidance and must NOT touch the network or write files.
+        withenv("FUSE_SOLPS_NN_AUTOCONVERT" => "0") do
+            @test !SOLPSNN.autoconvert_enabled()
+            mktempdir() do dir
+                @test_throws Exception SOLPSNN.ensure_available(dir, ["te"])
+                @test_throws Exception SOLPSNN.convert_groups!(dir, ["te"])
+                # convert_groups! must not have populated anything
+                @test isempty(readdir(dir))
+            end
+        end
+    end
+
+    @testset "regression: resolve_dir precedence (no fetch)" begin
+        # explicit dir always wins
+        @test SOLPSNN.resolve_dir(; dir="/explicit/path") == "/explicit/path"
+        withenv("FUSE_SOLPS_NN_DIR" => "/env/dir", "PSCRATCH" => "/scr") do
+            @test SOLPSNN.resolve_dir(; dir="/explicit/path") == "/explicit/path"
+            @test SOLPSNN.resolve_dir() == "/env/dir"
+        end
+        # no explicit ENV -> $PSCRATCH/solps-nn-onnx
+        withenv("FUSE_SOLPS_NN_DIR" => nothing, "PSCRATCH" => "/scr") do
+            @test SOLPSNN.resolve_dir() == joinpath("/scr", "solps-nn-onnx")
+        end
+        # neither ENV set -> a writable Scratch.jl space under the depot
+        withenv("FUSE_SOLPS_NN_DIR" => nothing, "PSCRATCH" => nothing) do
+            d = SOLPSNN.resolve_dir()
+            @test isdir(d)
+            @test occursin("solps-nn-onnx", d)
+        end
+    end
+
+    @testset "regression: convert helpers (no fetch)" begin
+        # boolean ENV parsing
+        for off in ("0", "false", "no", "off", "OFF", "False")
+            @test !SOLPSNN._env_on("SOLPSNN_TEST_FLAG_X", off)
+        end
+        for on in ("1", "true", "yes", "on", "anything")
+            @test SOLPSNN._env_on("SOLPSNN_TEST_FLAG_X", on)
+        end
+        withenv("SOLPSNN_TEST_FLAG_X" => "0") do
+            @test !SOLPSNN._env_on("SOLPSNN_TEST_FLAG_X", "1")   # ENV overrides default
+        end
+
+        # item selection drops the root/geometry by-products
+        @test SOLPSNN._items_for(["root", "geometry", "te", "na1"]) == ["te", "na1"]
+        @test SOLPSNN._items_for(["root", "geometry"]) == String[]
+
+        # the bundled pipeline ships with the package
+        cdir = SOLPSNN.convert_dir()
+        @test isdir(cdir)
+        @test isfile(joinpath(cdir, "run.sh"))
+
+        # env-prefix resolution honors the override, else lands under a base dir
+        withenv("FUSE_SOLPS_NN_CONVERT_ENV" => "/custom/env") do
+            @test SOLPSNN.convert_env_prefix() == "/custom/env"
+        end
+        withenv("FUSE_SOLPS_NN_CONVERT_ENV" => nothing, "PSCRATCH" => "/scr") do
+            @test SOLPSNN.convert_env_prefix() == joinpath("/scr", ".conda", "envs", "solpsnn-convert")
+        end
+
+        # convert_env_exists detects a python-bearing prefix
+        mktempdir() do prefix
+            @test !SOLPSNN.convert_env_exists(prefix)
+            mkpath(joinpath(prefix, "bin"))
+            write(joinpath(prefix, "bin", "python"), "")
+            @test SOLPSNN.convert_env_exists(prefix)
+        end
+    end
+
     @testset "SOLPS2imas extension: grid build + :solps ordering" begin
         b2 = joinpath(@__DIR__, "..", "convert", "geometry_data", "b2fgmtry")
         if !HAVE_SOLPS2IMAS
