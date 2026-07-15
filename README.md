@@ -1,5 +1,8 @@
 # SOLPSNN.jl
 
+![Format Check](https://github.com/ProjectTorreyPines/SOLPSNN.jl/actions/workflows/format_check.yml/badge.svg)
+![Tests](https://github.com/ProjectTorreyPines/SOLPSNN.jl/actions/workflows/test.yml/badge.svg)
+
 Julia inference wrapper for the **SOLPS-NN** tokamak edge/SOL plasma surrogate
 of [Dasbach & Wiesen](https://github.com/sdasbach/solps-nn), for use in FUSE.
 

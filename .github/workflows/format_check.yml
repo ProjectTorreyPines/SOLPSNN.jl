@@ -1,0 +1,17 @@
+name: Format Check
+
+on:
+  workflow_dispatch:  # Manually trigger
+  push:
+    branches: master
+    paths:
+      - '.github/workflows/format_check.yml'
+      - '**.jl'
+  pull_request:
+    branches: master
+    paths:
+      - '.github/workflows/format_check.yml'
+      - '**.jl'
+jobs:
+  format_check:
+    uses: ProjectTorreyPines/GitHubActionsWorkflows/.github/workflows/format_check.yml@master

@@ -1,0 +1,33 @@
+name: Test
+
+on:
+  workflow_dispatch:  # Manually trigger
+  push:
+    branches: master
+    paths:
+      - '.github/workflows/test.yml'
+      - 'src/**'
+      - 'ext/**'
+      - 'test/**'
+      - 'Project.toml'
+  pull_request:
+    branches: master
+    paths:
+      - '.github/workflows/test.yml'
+      - 'src/**'
+      - 'ext/**'
+      - 'test/**'
+      - 'Project.toml'
+
+jobs:
+  test:
+    uses: ProjectTorreyPines/GitHubActionsWorkflows/.github/workflows/test.yml@master
+    secrets: inherit
+    with:
+      use_coverage: true
+      # All dependencies (IMASdd, IMASggd, SOLPS2imas, ...) resolve from General.
+      use_FuseRegistry: false
+      # SOLPSNN ships its own b2fgmtry fixture (convert/geometry_data) and never
+      # fetches the multi-GB ONNX weights in CI (auto-conversion is disabled in
+      # test/runtests.jl), so no DVC sample data is needed.
+      use_dvc: false
