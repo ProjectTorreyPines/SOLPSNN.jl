@@ -18,29 +18,29 @@ Quick start (ONNX artifacts are produced automatically on first use):
 
 Input order: `[R, B, P, Dpuff, Npuff, Dcore, Dperp, chi_perp]`.
 
-Upstream ships TensorFlow SavedModels, not ONNX, so the first request for a
-quantity runs the bundled `convert/` pipeline: it fetches that quantity's
-weights from SURFdrive and converts them to ONNX in a conda env (created on
-demand; needs `conda` on `PATH`, e.g. `module load conda` on NERSC or the FUSE
-conda env). Artifacts cache under `\$PSCRATCH/solps-nn-onnx` (or
-`ENV["FUSE_SOLPS_NN_DIR"]`). Pre-build with `SOLPSNN.convert_models!(["all"])`,
-disable auto-conversion with `ENV["FUSE_SOLPS_NN_AUTOCONVERT"] = "0"`, or point
-`ENV["FUSE_SOLPS_NN_BASE_URL"]` at a pre-converted mirror to download instead.
+Upstream ships TensorFlow SavedModels, not ONNX (and those TF weights are the
+single ground truth — a new TF release is picked up by re-running conversion),
+so the first request for a quantity runs the bundled `convert/` pipeline: it
+fetches that quantity's weights from SURFdrive and converts them to ONNX in a
+conda env (created on demand; needs `conda` on `PATH`, e.g. `module load conda`
+on NERSC or the FUSE conda env). Artifacts cache under `\$PSCRATCH/solps-nn-onnx`
+(or `ENV["FUSE_SOLPS_NN_DIR"]`). Pre-build with `SOLPSNN.convert_models!(["all"])`
+or disable auto-conversion with `ENV["FUSE_SOLPS_NN_AUTOCONVERT"] = "0"`.
 """
 module SOLPSNN
 
 import ONNXRunTime as ORT
 import NPZ
 import JSON
-import Downloads
 import SHA
+import Scratch
 import IMASdd
 using SpecialFunctions: erfc
 
 export SOLPSModel, load_model, predict, load_geometry, scaled_geometry
 export build_edge_profiles_ggd!, add_ggd_field!, ggd_time_slice!
 export build_edge_profiles_ggd_solps2imas!, bundled_b2fgmtry, R_JET
-export convert_models!, download_all!
+export convert_models!
 
 include("quantile.jl")
 include("geometry.jl")

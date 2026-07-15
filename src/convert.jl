@@ -101,7 +101,7 @@ end
 
 """
     convert_models!(items; dir=resolve_dir(), raw_dir=nothing, validate=false,
-                    base_url="", verbose=true) -> dir
+                    verbose=true) -> dir
 
 Run the bundled `convert/run.sh` to produce the ONNX artifacts for `items`
 (SOLPS-NN quantity keys, e.g. `["te","ti","na1","pwmxap","psol"]`, or `["all"]`)
@@ -112,13 +112,13 @@ conversion conda env is created if missing. Requires a conda-like executable on
 function convert_models!(items::AbstractVector{<:AbstractString};
         dir::Union{Nothing,AbstractString}=nothing,
         raw_dir::Union{Nothing,AbstractString}=nothing,
-        validate::Bool=false, base_url::AbstractString="", verbose::Bool=true)
+        validate::Bool=false, verbose::Bool=true)
     d = resolve_dir(; dir)
     conda = find_conda()
     conda === nothing && error(
         "SOLPSNN: no conda/mamba/micromamba on PATH. Run `module load conda` (NERSC) or " *
-        "activate the FUSE conda env, set ENV[\"$CONDA_ENV\"], point ENV[\"$ENV_DIR\"] at a " *
-        "prepared artifact dir, or configure a mirror (ENV[\"$BASE_URL_ENV\"]).")
+        "activate the FUSE conda env, set ENV[\"$CONDA_ENV\"], or point ENV[\"$ENV_DIR\"] at " *
+        "an already-converted artifact dir.")
     prefix = convert_env_prefix()
     ensure_convert_env!(conda, prefix; verbose)
 
@@ -131,7 +131,7 @@ function convert_models!(items::AbstractVector{<:AbstractString};
 
     overrides = merge(_convert_env_overrides(), Dict(
         "CONVERT_ENV" => prefix, "RAW_DIR" => raw, "OUT_DIR" => d,
-        "BASE_URL" => String(base_url), "VALIDATE" => validate ? "1" : "0",
+        "BASE_URL" => "", "VALIDATE" => validate ? "1" : "0",
         "PATH" => string(dirname(conda), Sys.iswindows() ? ";" : ":", get(ENV, "PATH", ""))))
     verbose && @info "SOLPSNN: converting $(collect(items)) via $run_sh" out_dir = d raw_dir = raw env = prefix
     withenv(overrides...) do
@@ -158,7 +158,6 @@ function convert_groups!(dir::AbstractString, groups::AbstractVector{<:AbstractS
               * run  SOLPSNN.convert_models!($(repr(_items_for(groups))); dir="$dir")
               * run  $(joinpath(convert_dir(), "run.sh"))  yourself, then set ENV["$ENV_DIR"]
               * point ENV["$ENV_DIR"] at an already-converted directory
-              * configure a download mirror via ENV["$BASE_URL_ENV"]
             """)
     end
     items = _items_for(groups)

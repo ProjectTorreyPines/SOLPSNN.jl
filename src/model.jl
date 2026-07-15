@@ -72,10 +72,9 @@ Load a SOLPS-NN quantity. `item` is one of `te`, `ti`, `pwmxap`, `fnixap`,
 resolution; `verify=true` SHA-256-checks every file.
 
 Any artifacts not already present in the resolved directory are produced
-automatically — converted from the upstream TensorFlow weights on first use, or
-downloaded from a configured mirror (see [`resolve_dir`](@ref) /
-[`ensure_available`](@ref)). Disable auto-conversion with
-`ENV["$AUTOCONVERT_ENV"] = "0"`.
+automatically — converted from the upstream TensorFlow weights on first use
+(see [`resolve_dir`](@ref) / [`ensure_available`](@ref)). Disable auto-conversion
+with `ENV["$AUTOCONVERT_ENV"] = "0"`.
 """
 function load_model(item::AbstractString; species=nothing, dir=nothing, verify::Bool=false)
     d = resolve_dir(; dir)
