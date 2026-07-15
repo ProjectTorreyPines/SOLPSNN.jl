@@ -6,10 +6,9 @@ Julia inference wrapper for the SOLPS-NN edge-plasma surrogate
 `convert/` pipeline. Reproduces the upstream pre-processing, 5-fold ensemble
 averaging, and sklearn QuantileTransformer inverse in pure Julia.
 
-Quick start:
+Quick start (ONNX artifacts are produced automatically on first use):
 
-    ENV["FUSE_SOLPS_NN_DIR"] = "/path/to/solps-nn-onnx"   # or \$PSCRATCH default
-    te  = SOLPSNN.load_model("te")
+    te  = SOLPSNN.load_model("te")                        # converts on first use
     ne  = SOLPSNN.load_model("na"; species="D1")
     q   = SOLPSNN.load_model("pwmxap")
 
@@ -18,6 +17,15 @@ Quick start:
     qpeak  = SOLPSNN.predict(q, X)                         # (1,)
 
 Input order: `[R, B, P, Dpuff, Npuff, Dcore, Dperp, chi_perp]`.
+
+Upstream ships TensorFlow SavedModels, not ONNX, so the first request for a
+quantity runs the bundled `convert/` pipeline: it fetches that quantity's
+weights from SURFdrive and converts them to ONNX in a conda env (created on
+demand; needs `conda` on `PATH`, e.g. `module load conda` on NERSC or the FUSE
+conda env). Artifacts cache under `\$PSCRATCH/solps-nn-onnx` (or
+`ENV["FUSE_SOLPS_NN_DIR"]`). Pre-build with `SOLPSNN.convert_models!(["all"])`,
+disable auto-conversion with `ENV["FUSE_SOLPS_NN_AUTOCONVERT"] = "0"`, or point
+`ENV["FUSE_SOLPS_NN_BASE_URL"]` at a pre-converted mirror to download instead.
 """
 module SOLPSNN
 
@@ -32,10 +40,12 @@ using SpecialFunctions: erfc
 export SOLPSModel, load_model, predict, load_geometry, scaled_geometry
 export build_edge_profiles_ggd!, add_ggd_field!, ggd_time_slice!
 export build_edge_profiles_ggd_solps2imas!, bundled_b2fgmtry, R_JET
+export convert_models!, download_all!
 
 include("quantile.jl")
 include("geometry.jl")
 include("download.jl")
+include("convert.jl")
 include("model.jl")
 include("ggd.jl")
 

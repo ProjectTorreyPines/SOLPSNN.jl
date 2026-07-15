@@ -41,9 +41,10 @@ grid_size(geo::SOLPSGeometry) = (geo.nx + 2, geo.ny + 2)
     load_geometry(dir)
 
 Load the geometry artifacts produced by `convert/parse_geometry.py` from
-`<dir>/geometry/`.
+`<dir>/geometry/`. Missing artifacts are auto-fetched (see [`ensure_available`](@ref)).
 """
 function load_geometry(dir::AbstractString)
+    ensure_available(dir, ["geometry"])
     gdir = joinpath(dir, "geometry")
     meta = JSON.parsefile(joinpath(gdir, "geometry.json"))
     crx = Float64.(NPZ.npzread(joinpath(gdir, "crx.npy")))

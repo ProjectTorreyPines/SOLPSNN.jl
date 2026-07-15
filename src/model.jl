@@ -70,11 +70,19 @@ Load a SOLPS-NN quantity. `item` is one of `te`, `ti`, `pwmxap`, `fnixap`,
 `psol`, or a species field (`na`/`ua`/`rqrad` with `species`, e.g.
 `load_model("na"; species="D1")`). `dir` overrides artifact-directory
 resolution; `verify=true` SHA-256-checks every file.
+
+Any artifacts not already present in the resolved directory are produced
+automatically — converted from the upstream TensorFlow weights on first use, or
+downloaded from a configured mirror (see [`resolve_dir`](@ref) /
+[`ensure_available`](@ref)). Disable auto-conversion with
+`ENV["$AUTOCONVERT_ENV"] = "0"`.
 """
 function load_model(item::AbstractString; species=nothing, dir=nothing, verify::Bool=false)
     d = resolve_dir(; dir)
     key = model_key(item, species)
-    ensure_available(d, ["root", key]; verify)
+    # Field items also need the shared geometry group (geometry.json sets the grid).
+    groups = item in SCALAR_ITEMS ? ["root", key] : ["root", "geometry", key]
+    ensure_available(d, groups; verify)
 
     X_mean = Float64.(vec(NPZ.npzread(joinpath(d, "X_mean.npy"))))
     X_std = Float64.(vec(NPZ.npzread(joinpath(d, "X_std.npy"))))
