@@ -1,7 +1,7 @@
 name = "SOLPSNN"
 uuid = "2249bde5-56eb-4cc4-a5e9-f29213b9e947"
-authors = ["ProjectTorreyPines"]
 version = "1.0.0"
+authors = ["ProjectTorreyPines"]
 
 [deps]
 IMASdd = "c5a45a97-b3f9-491c-b9a7-aa88c3bc0067"
@@ -24,6 +24,7 @@ IMASdd = "7, 8"
 JSON = "0, 1"
 NPZ = "0.4"
 ONNXRunTime = "1.2"
+SHA = "0.7"
 SOLPS2imas = "2"
 Scratch = "1"
 SpecialFunctions = "2"
