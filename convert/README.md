@@ -71,7 +71,9 @@ standardize with `X_mean`/`X_std`. Post-processing is the sklearn
 
 ## Notes
 
-- `config.json` (vendored) is the upstream download manifest (URLs + hashes).
+- `config.json` and `geometry_data/b2fgmtry` are verbatim upstream files, and
+  `download_models.py` / `parse_geometry.py` port upstream code; all MIT,
+  Copyright (c) 2024 Stefan Dasbach — see `../THIRD_PARTY_LICENSES.md`.
 - On Perlmutter, `onnxruntime` prints harmless `pthread_setaffinity_np`
   warnings unless thread counts are pinned; `convert_to_onnx.py --validate`
   sets `intra_op_num_threads=1` to avoid them.

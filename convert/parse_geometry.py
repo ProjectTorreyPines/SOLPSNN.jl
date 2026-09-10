@@ -21,6 +21,11 @@ Output:
 Example:
   python parse_geometry.py --b2fgmtry geometry_data/b2fgmtry \
       --out-dir $PSCRATCH/solps-nn-onnx
+
+Portions (read_b25formfile, R_JET) are derived from solps-nn
+(https://github.com/sdasbach/solps-nn), MIT License,
+Copyright (c) 2024 Stefan Dasbach (Forschungszentrum Jülich).
+See THIRD_PARTY_LICENSES.md at the repository root.
 """
 import argparse
 import json

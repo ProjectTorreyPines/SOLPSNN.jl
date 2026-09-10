@@ -22,6 +22,10 @@ Item naming (matches upstream `species_dict`):
 Example:
   python download_models.py --items te ti na1 pwmxap psol \
       --raw-dir $PSCRATCH/solps-nn-data
+
+Derived from solps-nn (https://github.com/sdasbach/solps-nn), MIT License,
+Copyright (c) 2024 Stefan Dasbach (Forschungszentrum Jülich).
+See THIRD_PARTY_LICENSES.md at the repository root.
 """
 import argparse
 import hashlib

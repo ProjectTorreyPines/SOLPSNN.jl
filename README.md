@@ -156,3 +156,13 @@ Users of the model are kindly asked to cite all of the following publications:
   edge plasmas, [arXiv:2604.19223](https://arxiv.org/abs/2604.19223).
 
 Upstream model: <https://github.com/sdasbach/solps-nn>.
+
+## License
+
+SOLPSNN.jl is released under the Apache License 2.0 (see [LICENSE](LICENSE)).
+A few files under [`convert/`](convert/) are copied or ported from the upstream
+[SOLPS-NN](https://github.com/sdasbach/solps-nn) repository, which is MIT
+licensed (Copyright (c) 2024 Stefan Dasbach, Forschungszentrum Jülich); the
+full notice and the list of affected files are in
+[THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md). The model weights are not
+redistributed here.
